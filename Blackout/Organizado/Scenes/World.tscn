@@ -3,24 +3,24 @@
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scripts/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_side.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_0.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_2.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_4.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_5.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_up.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_0.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_1.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_2.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_3.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_4.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_5.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_0.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_1.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_2.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_3.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_4.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_5.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_up.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_5.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_0.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_4.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_5.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_0.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_4.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_5.png" type="Texture" id=21]
 [ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=22]
 [ext_resource path="res://assets/HUD/arrows/right.png" type="Texture" id=23]
 [ext_resource path="res://assets/HUD/arrows/down.png" type="Texture" id=24]
@@ -38,29 +38,29 @@ animations = [ {
 "name": "Idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Walk_Down",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Idle_Front",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": false,
 "name": "Idle_Back",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Walk_Up",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Walk_Down",
 "speed": 8.0
 } ]
 
@@ -85,9 +85,8 @@ position = Vector2( 1, -2 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 190.49, 351.426 )
-z_index = 2
-collision_layer = 2
-collision_mask = 524290
+z_index = 3
+collision_mask = 524289
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
