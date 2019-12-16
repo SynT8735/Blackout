@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/slash.ogg-9997264dfe1efee69696886e831fc86e.oggstr"
+
+[deps]
+
+source_file="res://assets/sprites/PNG/tiny-RPG-forest-files/Demo/assets/sound/slash.ogg"
+dest_files=[ "res://.import/slash.ogg-9997264dfe1efee69696886e831fc86e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
