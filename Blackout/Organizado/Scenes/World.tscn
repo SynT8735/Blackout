@@ -1,23 +1,78 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=2]
-[ext_resource path="res://assets/HUD/arrows/right.png" type="Texture" id=3]
-[ext_resource path="res://assets/HUD/arrows/down.png" type="Texture" id=4]
-[ext_resource path="res://assets/HUD/arrows/up.png" type="Texture" id=5]
-[ext_resource path="res://assets/scripts/Pause.gd" type="Script" id=6]
-[ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/scripts/KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_side.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_4.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_5.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_0.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_3.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_4.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_5.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_up.png" type="Texture" id=21]
+[ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=22]
+[ext_resource path="res://assets/HUD/arrows/right.png" type="Texture" id=23]
+[ext_resource path="res://assets/HUD/arrows/down.png" type="Texture" id=24]
+[ext_resource path="res://assets/HUD/arrows/up.png" type="Texture" id=25]
+[ext_resource path="res://assets/scripts/Pause.gd" type="Script" id=26]
+[ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=27]
+[ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=29]
+[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=30]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle_Front",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk_Down",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Walk_Up",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": false,
+"name": "Idle_Back",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
 size = 72
-font_data = ExtResource( 7 )
-
-[sub_resource type="StyleBoxEmpty" id=2]
+font_data = ExtResource( 27 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [node name="World" type="Node"]
 __meta__ = {
@@ -28,35 +83,63 @@ __meta__ = {
 [node name="Scene" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1, -2 )
 
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 190.49, 351.426 )
+z_index = 3
+collision_mask = 524289
+script = ExtResource( 2 )
+speed = 100
+damage = 100
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -2, 0 )
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PoolVector2Array( -0.17128, -7.12155, 0.00761414, -5.98111, 0.970123, -5.98111, 1.04141, -5.05426, 1.96826, -5.05426, 1.96826, -4.05612, 3.00206, -4.02048, 3.00206, -3.02234, 3.96455, -2.95102, 3.96455, -0.990387, 3.0377, -0.990387, 3.00206, 2.93091, 2.00391, 2.96655, 1.96826, 3.96469, 0.970123, 3.92905, 0.970123, 4.8559, 1.04141, 13.0193, -0.0280304, 13.0549, -0.0133362, 14.0424, -3.97536, 14.0424, -3.97536, 12.9828, -6.04851, 12.9828, -6.00243, 9.89609, -7.01598, 9.89609, -6.96989, 7.86902, -6.09457, 7.91507, -6.04851, 5.98013, -4.94283, 5.98013, -4.89676, 4.92053, -6.92383, 4.96661, -6.87776, 2.93951, -7.98344, 2.84738, -7.98344, -3.97098, -7.01598, -3.97098, -6.96989, -6.18234, -6.00243, -6.09018, -6.04851, -7.05765 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -1.92307, -0.174835 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
+limit_left = 1
+limit_top = 1
+limit_right = 1520
+limit_bottom = 720
+editor_draw_limits = true
+
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Gamepad" type="Node2D" parent="HUD"]
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 16.2501, 535.558 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 2 )
+normal = ExtResource( 22 )
 passby_press = true
 
 [node name="right" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 188.002, 535.472 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 3 )
+normal = ExtResource( 23 )
 passby_press = true
 
 [node name="down" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 101.768, 622.545 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 4 )
+normal = ExtResource( 24 )
 passby_press = true
 
 [node name="up" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 101.768, 449.947 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 5 )
+normal = ExtResource( 25 )
 passby_press = true
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 100
 
 [node name="Pause" type="Control" parent="PauseMenu"]
@@ -64,7 +147,7 @@ pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource( 26 )
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/Pause"]
 anchor_right = 1.0
@@ -78,13 +161,13 @@ margin_left = -155.5
 margin_top = 53.0
 margin_right = 155.5
 margin_bottom = 142.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
 text = "PAUSED"
 
-[node name="voltarJogo" parent="PauseMenu/Pause" instance=ExtResource( 8 )]
+[node name="voltarJogo" parent="PauseMenu/Pause" instance=ExtResource( 28 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -93,16 +176,33 @@ margin_left = -230.0
 margin_top = -30.0
 margin_right = 230.0
 margin_bottom = 30.0
-custom_styles/focus = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
 
-[node name="voltarMenu" parent="PauseMenu/Pause" instance=ExtResource( 9 )]
+[node name="voltarMenu" parent="PauseMenu/Pause" instance=ExtResource( 29 )]
 margin_left = 561.181
 margin_top = 449.279
 margin_right = 721.181
 margin_bottom = 509.279
-custom_styles/focus = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 168.123, 349.535 )
+[node name="Button" type="Button" parent="."]
+pause_mode = 2
+margin_left = 7.18541
+margin_top = 135.913
+margin_right = 83.1854
+margin_bottom = 205.913
+rect_scale = Vector2( 0.2, 0.2 )
+custom_styles/focus = SubResource( 5 )
+icon = ExtResource( 30 )
+flat = true
+[connection signal="pressed" from="HUD/Gamepad/left" to="Player" method="_on_left_pressed"]
+[connection signal="released" from="HUD/Gamepad/left" to="Player" method="_on_left_released"]
+[connection signal="pressed" from="HUD/Gamepad/right" to="Player" method="_on_right_pressed"]
+[connection signal="released" from="HUD/Gamepad/right" to="Player" method="_on_right_released"]
+[connection signal="pressed" from="HUD/Gamepad/down" to="Player" method="_on_down_pressed"]
+[connection signal="released" from="HUD/Gamepad/down" to="Player" method="_on_down_released"]
+[connection signal="pressed" from="HUD/Gamepad/up" to="Player" method="_on_up_pressed"]
+[connection signal="released" from="HUD/Gamepad/up" to="Player" method="_on_up_released"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
+[connection signal="pressed" from="Button" to="PauseMenu/Pause" method="_on_Button_pressed"]
