@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/scripts/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/anim/player_anim.tres" type="SpriteFrames" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+editor/display_folded = true
+z_index = 3
+script = ExtResource( 1 )
+speed = 100
+damage = 100
+max_health = 100
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "Idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -4.00154, -7.05523, 2.0028, -7.02537, 2.0483, -6.02954, 3.04836, -6.0296, 3.05661, -5.00385, 4.04876, -5.03238, 4.04876, -4.04421, 5.00034, -4.04421, 5.07353, -3.00113, 6.02511, -2.98283, 6.02511, -0.969877, 5.07353, -1.02478, 5.00032, 3.00113, 4.01923, 3.03192, 4.06704, 4.02591, 3.02397, 4.00761, 3.04227, 5.05069, 1.96259, 5.01409, 2.01749, 5.98396, 3.00567, 5.98396, 3.09716, 12.9927, 1.99918, 13.0293, 2.03578, 14.0358, -2.08162, 13.9809, -2.02672, 13.011, -4.09458, 12.9744, -3.97944, 10.038, -5.02252, 10.038, -4.96762, 7.9702, -3.99774, 8.02509, -3.97944, 5.97554, -2.99126, 5.97554, -3.00956, 5.00566, -5.13231, 5.00566, -5.05911, 3.04761, -6.00772, 2.97606, -6.06559, -4.05264, -5.00985, -4.03031, -5.04462, -6.04693, -4.03631, -6.02954 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
