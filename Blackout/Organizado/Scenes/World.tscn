@@ -4,23 +4,23 @@
 [ext_resource path="res://assets/scripts/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_side.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_up.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_0.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_2.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_3.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_4.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_5.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_0.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_1.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_3.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_4.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_5.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_0.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_2.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_4.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_5.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_4.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/up/walk_up_5.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_0.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_3.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_4.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Walk/side/walk_side_5.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_up.png" type="Texture" id=21]
 [ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=22]
 [ext_resource path="res://assets/HUD/arrows/right.png" type="Texture" id=23]
 [ext_resource path="res://assets/HUD/arrows/down.png" type="Texture" id=24]
@@ -43,24 +43,24 @@ animations = [ {
 "name": "Idle_Front",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": false,
-"name": "Idle_Back",
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk_Down",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Walk_Up",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Run",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "Walk_Down",
+"frames": [ ExtResource( 21 ) ],
+"loop": false,
+"name": "Idle_Back",
 "speed": 8.0
 } ]
 
@@ -88,9 +88,6 @@ position = Vector2( 190.49, 351.426 )
 z_index = 3
 collision_mask = 524289
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 speed = 100
 damage = 100
 
@@ -100,8 +97,7 @@ frames = SubResource( 1 )
 animation = "Idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
-visible = false
-polygon = PoolVector2Array( -4.01102, 10.0403, -0.0415535, 10.0246, -0.0415535, 9.02043, 0.993958, 9.02043, 1.02536, 2.0072, 0.036911, 2.02289, 0.0212212, 1.03444, 0.962597, 1.03444, 1.00967, -0.00106812, 1.93535, -0.00106812, 2.02949, -0.989517, 3.0807, -0.989517, 3.20623, -4.9747, 4.03778, -5.02177, 4.02209, -6.98294, 3.03364, -7.03, 3.06502, -8.04984, 2.06089, -8.00276, 2.01382, -9.02257, 1.02537, -9.02257, 1.02537, -9.99533, 0.0489044, -10.0046, -0.0135498, -10.9831, -6.01944, -11.0351, -5.98821, -10.0359, -7.01868, -10.0359, -7.07072, -7.99577, -8.01588, -7.99007, -8.02834, -1.02187, -6.98746, -1.01146, -7.02909, 0.997437, -4.97856, 1.01825, -5.0306, 1.98627, -5.98821, 1.98627, -6.01944, 4.00558, -7.02909, 3.98476, -7.01869, 5.97284, -6.02985, 5.97284, -6.00903, 9.01221, -4.04177, 9.02263 )
+polygon = PoolVector2Array( -0.17128, -7.12155, 0.00761414, -5.98111, 0.970123, -5.98111, 1.04141, -5.05426, 1.96826, -5.05426, 1.96826, -4.05612, 3.00206, -4.02048, 3.00206, -3.02234, 3.96455, -2.95102, 3.96455, -0.990387, 3.0377, -0.990387, 3.00206, 2.93091, 2.00391, 2.96655, 1.96826, 3.96469, 0.970123, 3.92905, 0.970123, 4.8559, 1.04141, 13.0193, -0.0280304, 13.0549, -0.0133362, 14.0424, -3.97536, 14.0424, -3.97536, 12.9828, -6.04851, 12.9828, -6.00243, 9.89609, -7.01598, 9.89609, -6.96989, 7.86902, -6.09457, 7.91507, -6.04851, 5.98013, -4.94283, 5.98013, -4.89676, 4.92053, -6.92383, 4.96661, -6.87776, 2.93951, -7.98344, 2.84738, -7.98344, -3.97098, -7.01598, -3.97098, -6.96989, -6.18234, -6.00243, -6.09018, -6.04851, -7.05765 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -1.92307, -0.174835 )
