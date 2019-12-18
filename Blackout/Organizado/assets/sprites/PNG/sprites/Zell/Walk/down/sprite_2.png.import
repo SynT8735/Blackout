@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walk_down_2.png-e2f3744f647a7f1baab4d0a7b5538bed.stex"
+path="res://.import/sprite_2.png-268ba90e372642c403a1742ba45113cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/PNG/sprites/Zell/Walk/down/walk_down_2.png"
-dest_files=[ "res://.import/walk_down_2.png-e2f3744f647a7f1baab4d0a7b5538bed.stex" ]
+source_file="res://assets/sprites/PNG/sprites/Zell/Walk/down/sprite_2.png"
+dest_files=[ "res://.import/sprite_2.png-268ba90e372642c403a1742ba45113cb.stex" ]
 
 [params]
 
