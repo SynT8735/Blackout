@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 export (int) var speed
-export (int) var damage
-export (int) var max_health
+var max_health : = 3
+var health : = max_health
+var damage : = 1
 
 var touch_left : = false
 var touch_right : = false
@@ -10,6 +11,10 @@ var touch_up : = false
 var touch_down : = false
 var velocity : = Vector2()
 var is_walking := false
+
+func _ready():
+	if max_health == 0:
+		get_tree().change_scene('res://Scenes/Menu/Menu.tscn')
 
 func get_input():
 	if (not is_walking) and (Input.is_action_pressed("ui_right") or touch_right):
@@ -37,7 +42,6 @@ func get_input():
 		velocity.x = 0
 		
 	if Input.is_action_just_released("ui_left"):
-		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("Idle")
 		is_walking = false
 		velocity.x = 0
@@ -48,6 +52,7 @@ func get_input():
 		velocity.y = 0
 		
 	if Input.is_action_just_released("ui_down"):
+		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Idle_Front")
 		is_walking = false
 		velocity.y = 0
@@ -90,9 +95,14 @@ func _on_up_released():
 	$Sprite.play("Idle_Back")
 	velocity.y = 0
 	is_walking = false
+	
+func _on_Area2D_area_entered(area):
+	max_health -= damage
+	print(max_health)
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	get_input()
+	_ready()
 #	velocity = move_and_slide(velocity)
 	move_and_collide(velocity * delta)
