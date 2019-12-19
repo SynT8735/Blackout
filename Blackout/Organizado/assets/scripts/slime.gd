@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 export (int) var speed
+export (int) var damage
+export (int) var max_health
 
 var velocity = Vector2.ZERO
 var player = preload("res://Scenes/player.tscn").instance()
