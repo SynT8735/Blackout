@@ -29,9 +29,9 @@ color = Color( 0, 0, 0, 1 )
 [node name="Logo" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -70.2422
+margin_left = -72.0929
 margin_top = 28.4918
-margin_right = 179.758
+margin_right = 177.907
 margin_bottom = 305.492
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
@@ -79,6 +79,6 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
-text = "New Game"
+text = "Jogar"
 align = 1
 [connection signal="pressed" from="New Game" to="." method="_on_New_Game_pressed"]

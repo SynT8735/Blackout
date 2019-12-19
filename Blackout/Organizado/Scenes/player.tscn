@@ -6,7 +6,7 @@
 [node name="Player" type="KinematicBody2D"]
 z_index = 3
 script = ExtResource( 1 )
-speed = 300
+speed = 100
 damage = 100
 max_health = 100
 
