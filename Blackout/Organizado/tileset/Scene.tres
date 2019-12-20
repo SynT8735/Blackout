@@ -145,7 +145,7 @@ points = PoolVector2Array( 1.35001, 136.984, 1.07092, 117.727, 15.3041, 97.354, 
 [sub_resource type="ConvexPolygonShape2D" id=41]
 points = PoolVector2Array( 53.8106, 14.8597, 53.8106, 19.974, 1.32135, 19.7049, 1.32135, 14.3214 )
 
-[sub_resource type="ConvexPolygonShape2D" id=68]
+[sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 4.207, 35.7759, 11.7439, 35.7759, 12.0131, 42.1015, 8.91758, 42.7744, 6.09124, 42.909, 3.93783, 42.2361 )
 
 [sub_resource type="ConvexPolygonShape2D" id=43]
@@ -184,55 +184,55 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 [sub_resource type="ConvexPolygonShape2D" id=54]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=69]
+[sub_resource type="ConvexPolygonShape2D" id=55]
 points = PoolVector2Array( 0, 32, 0, 0, 32, 0, 32, 22.5862, 21.3509, 22.7208, 21.6201, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=70]
+[sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 8.59692, 32, 8.73157, 22.5862, 0, 22.7208 )
 
-[sub_resource type="ConvexPolygonShape2D" id=71]
+[sub_resource type="ConvexPolygonShape2D" id=57]
 points = PoolVector2Array( 8.32776, 0.141987, 32, 0.41116, 32, 32, 0, 32, 0, 9.29396, 8.59692, 9.29396 )
 
-[sub_resource type="ConvexPolygonShape2D" id=72]
+[sub_resource type="ConvexPolygonShape2D" id=58]
 points = PoolVector2Array( 22.293, 8.75562, 32, 9.15938, 32, 32, 0, 32, 0, 0, 22.293, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=55]
+[sub_resource type="ConvexPolygonShape2D" id=59]
 points = PoolVector2Array( 7.64001, 10.5493, 14.617, 8.59573, 18.8033, 8.03757, 21.5941, 9.99115, 22.9895, 11.1075, 24.664, 15.2937, 25.7803, 18.0845, 25.7803, 20.0381, 25.7803, 22.2707, 22.1523, 24.2243, 19.6405, 25.3406, 16.5706, 26.1779, 16.0125, 26.4569, 16.0125, 26.4569, 13.7798, 25.8988, 12.1053, 25.3406, 7.36093, 23.108, 7.36093, 23.108, 7.08185, 22.8289, 4.5701, 19.4799, 4.5701, 19.2008, 5.12827, 16.41 )
 
-[sub_resource type="ConvexPolygonShape2D" id=56]
+[sub_resource type="ConvexPolygonShape2D" id=60]
 points = PoolVector2Array( 37.5382, 0, 38.0034, 6.86415, 41.2593, 10.3527, 47.3061, 10.3527, 47.7712, 40.8191, 13.1186, 40.3539, 8.23469, 36.1677, 7.76954, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=57]
+[sub_resource type="ConvexPolygonShape2D" id=61]
 points = PoolVector2Array( 0, 9.88754, 5.86401, 9.88754, 11.2131, 7.32928, 9.81769, 0, 40.9818, 0, 39.5864, 32.9118, 35.6327, 41.0516, 0, 41.9819 )
 
-[sub_resource type="ConvexPolygonShape2D" id=58]
+[sub_resource type="ConvexPolygonShape2D" id=62]
 points = PoolVector2Array( 0, 7.32928, 16, 7.09671, 16, 41.7493, 0, 42.4471, 0, 21.0508 )
 
-[sub_resource type="ConvexPolygonShape2D" id=59]
+[sub_resource type="ConvexPolygonShape2D" id=63]
 points = PoolVector2Array( 0, 5.23618, 16, 5.70131, 16, 40.8191, 0, 41.0516 )
 
-[sub_resource type="ConvexPolygonShape2D" id=60]
+[sub_resource type="ConvexPolygonShape2D" id=64]
 points = PoolVector2Array( 0, 6.39902, 8.00095, 6.63159, 16, 7.09671, 16, 40.1214, 0, 40.1214, 0, 18.9577 )
 
-[sub_resource type="ConvexPolygonShape2D" id=61]
+[sub_resource type="ConvexPolygonShape2D" id=65]
 points = PoolVector2Array( 0.420593, 6.63159, 16, 6.16644, 16, 41.7493, 0, 41.7493 )
 
-[sub_resource type="ConvexPolygonShape2D" id=62]
+[sub_resource type="ConvexPolygonShape2D" id=66]
 points = PoolVector2Array( 48, 7.13472, 48, 42.6944, 34.9362, 42.9269, 39.1224, 7.5766 )
 
-[sub_resource type="ConvexPolygonShape2D" id=63]
+[sub_resource type="ConvexPolygonShape2D" id=67]
 points = PoolVector2Array( 14.2842, 42.299, 0, 41.1827, 0, 9.08829, 9.53977, 9.36737 )
 
-[sub_resource type="ConvexPolygonShape2D" id=64]
+[sub_resource type="ConvexPolygonShape2D" id=68]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=65]
+[sub_resource type="ConvexPolygonShape2D" id=69]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=66]
+[sub_resource type="ConvexPolygonShape2D" id=70]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=67]
+[sub_resource type="ConvexPolygonShape2D" id=71]
 points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 111.568, 9.08918, 133.671, 16.4569, 143.383, 32.1971, 143.383, 50.6165, 128.313, 64.3473, 137.02, 64.0124, 138.695, 70.3755, 135.346, 82.7667, 142.713, 96.1626, 143.383, 114.582, 128.313, 127.978, 137.69, 131.662, 136.35, 147.067, 122.62, 152.425, 111.233, 161.133, 122.954, 163.812, 114.247, 181.227, 95.4928, 186.585, 69.3708, 179.217, 47.9373, 184.911, 25.1643, 179.887, 19.8059, 164.817, 27.1737, 155.774, 16.4569, 140.369, 17.7965, 125.299, 32.1971, 109.224, 32.1971, 96.4975, 18.1314, 79.7526, 19.471, 58.989, 32.8669, 44.5884, 37.8904, 24.4945, 51.9561, 12.7731 )
 
 [resource]
@@ -803,7 +803,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 68 ),
+"shape": SubResource( 42 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 50/z_index = 0
@@ -1017,25 +1017,25 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 69 ),
+"shape": SubResource( 55 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 70 ),
+"shape": SubResource( 56 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 71 ),
+"shape": SubResource( 57 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 72 ),
+"shape": SubResource( 58 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 74/z_index = 0
@@ -1071,7 +1071,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 55 ),
+"shape": SubResource( 59 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 77/z_index = 0
@@ -1193,7 +1193,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 56 ),
+"shape": SubResource( 60 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 88/z_index = 0
@@ -1209,7 +1209,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 57 ),
+"shape": SubResource( 61 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 89/z_index = 0
@@ -1225,7 +1225,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 58 ),
+"shape": SubResource( 62 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 90/z_index = 0
@@ -1241,7 +1241,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 59 ),
+"shape": SubResource( 63 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 91/z_index = 0
@@ -1257,7 +1257,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 60 ),
+"shape": SubResource( 64 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 92/z_index = 0
@@ -1273,7 +1273,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 61 ),
+"shape": SubResource( 65 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 93/z_index = 0
@@ -1305,13 +1305,13 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 62 ),
+"shape": SubResource( 66 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 63 ),
+"shape": SubResource( 67 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 95/z_index = 0
@@ -1327,7 +1327,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 64 ),
+"shape": SubResource( 68 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 96/z_index = 0
@@ -1343,7 +1343,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 65 ),
+"shape": SubResource( 69 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 97/z_index = 0
@@ -1359,7 +1359,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 66 ),
+"shape": SubResource( 70 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 98/z_index = 0
@@ -1375,7 +1375,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 67 ),
+"shape": SubResource( 71 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 99/z_index = 0

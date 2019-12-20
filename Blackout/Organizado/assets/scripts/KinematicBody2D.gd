@@ -68,26 +68,26 @@ func _on_up_pressed():
 
 func _on_left_released():
 	touch_left = false
-	$Sprite.flip_h = true
-	$Sprite.play("Idle")
+	$AnimatedSprite.flip_h = true
+	$AnimatedSprite.play("Idle")
 	velocity.x = 0
 	is_walking = false
 
 func _on_right_released():
 	touch_right = false
-	$Sprite.play("Idle")
+	$AnimatedSprite.play("Idle")
 	velocity.x = 0
 	is_walking = false
 
 func _on_down_released():
 	touch_down = false
-	$Sprite.play("Idle_Front")
+	$AnimatedSprite.play("Idle_Front")
 	velocity.y = 0
 	is_walking = false
 
 func _on_up_released():
 	touch_up = false
-	$Sprite.play("Idle_Back")
+	$AnimatedSprite.play("Idle_Back")
 	velocity.y = 0
 	is_walking = false
 
