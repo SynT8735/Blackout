@@ -18,7 +18,3 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
     if body.name == "Player":
         player = null
-
-func take_damage():
-	print("Slime took damage")
-	$AnimationPlayer.play("taking_damage")
