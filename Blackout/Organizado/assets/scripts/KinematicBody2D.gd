@@ -1,26 +1,33 @@
 extends KinematicBody2D
 
+const arrow = preload("res://Scenes/Arrow.tscn")
+
 export (int) var speed = 100
 export (int) var knockback_speed = 500
 
 onready var area = $Area2D
 onready var sprite = $AnimatedSprite
 onready var animation_player = $AnimationPlayer
+onready var tween = $Tween
 
 var touch_left := false
 var touch_right := false
 var touch_up := false
 var touch_down := false
 
+var charging_bow = false
+var bow_power = 0
+var bow_damage = 0
+
 var velocity := Vector2()
 var is_taking_damage = false
 
 func get_input():
 	# Basically just turning input values into single boolean variables
-	var move_right = Input.is_action_pressed("ui_right") or touch_right
-	var move_left = Input.is_action_pressed("ui_left") or touch_left
-	var move_up = Input.is_action_pressed("ui_up") or touch_up
-	var move_down = Input.is_action_pressed("ui_down") or touch_down
+	var move_right = (Input.is_action_pressed("ui_right") or touch_right) and not charging_bow
+	var move_left =( Input.is_action_pressed("ui_left") or touch_left) and not charging_bow
+	var move_up = (Input.is_action_pressed("ui_up") or touch_up) and not charging_bow
+	var move_down = (Input.is_action_pressed("ui_down") or touch_down) and not charging_bow
 	
 	# Initializing variables
 	var x_movement = 0
@@ -43,14 +50,33 @@ func get_input():
 		elif move_down:
 			sprite.play("Walk_Down")
 	else:
-		if Input.is_action_just_released("ui_up"):
+		if Input.is_action_just_released("ui_up") and not charging_bow:
 			sprite.play("Idle_Back")
-		elif Input.is_action_just_released("ui_down"):
+		elif Input.is_action_just_released("ui_down") and not charging_bow:
 			sprite.play("Idle_Front")
-		elif Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right"):
+		elif (Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right")) and not charging_bow:
 			sprite.play("Idle")
 	var move_to = Vector2(x_movement * speed, y_movement * speed)
 	velocity = lerp(velocity, move_to, 0.2)
+
+func get_attack_input():
+	if Input.is_action_pressed("ui_accept") and not charging_bow:
+		charging_bow = true
+		velocity = Vector2.ZERO
+		sprite.play("Attack_Bow")
+		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+	elif Input.is_action_just_released("ui_accept"):
+		charging_bow = false
+		tween.stop(self, "bow_power")
+		sprite.play("Idle")
+		var arrow_instance = arrow.instance()
+		var direction = -1 if sprite.flip_h else 1
+		arrow_instance.init(direction, bow_power)
+		get_parent().add_child(arrow_instance)
+		arrow_instance.global_position = global_position
+		arrow_instance.global_position.x += 16 * direction
+		bow_power = 0
 
 func _on_left_pressed():
 	touch_left = true
@@ -65,24 +91,29 @@ func _on_up_pressed():
 	touch_up = true
 
 func _on_left_released():
-	touch_left = false
-	sprite.play("Idle")
+	if not charging_bow:
+		touch_left = false
+		sprite.play("Idle")
 
 func _on_right_released():
-	touch_right = false
-	sprite.play("Idle")
+	if not charging_bow:
+		touch_right = false
+		sprite.play("Idle")
 
 func _on_down_released():
-	touch_down = false
-	sprite.play("Idle_Front")
+	if not charging_bow:
+		touch_down = false
+		sprite.play("Idle_Front")
 
 func _on_up_released():
-	touch_up = false
-	sprite.play("Idle_Back")
+	if not charging_bow:
+		touch_up = false
+		sprite.play("Idle_Back")
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	get_input()
+	get_attack_input()
 	check_for_overlap()
 	velocity = move_and_slide(velocity)
 
