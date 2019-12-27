@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
 export (int) var speed
-export (int) var damage
-export (int) var max_health
 
 var touch_left : = false
 var touch_right : = false
@@ -30,30 +28,30 @@ func get_input():
 		velocity.y -= 1
 		is_walking = true
 		$AnimatedSprite.play("Walk_Up")
-		
+	
 	if Input.is_action_just_released("ui_right"):
 		$AnimatedSprite.play("Idle")
 		is_walking = false
 		velocity.x = 0
-		
+	
 	if Input.is_action_just_released("ui_left"):
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("Idle")
 		is_walking = false
 		velocity.x = 0
-		
+	
 	if Input.is_action_just_released("ui_up"):
 		$AnimatedSprite.play("Idle_Back")
 		is_walking = false
 		velocity.y = 0
-		
+	
 	if Input.is_action_just_released("ui_down"):
 		$AnimatedSprite.play("Idle_Front")
 		is_walking = false
 		velocity.y = 0
-	
+
 	velocity = velocity.normalized() * speed
-	
+
 func _on_left_pressed():
 	touch_left = true
 

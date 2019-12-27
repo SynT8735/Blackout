@@ -7,8 +7,6 @@
 z_index = 3
 script = ExtResource( 1 )
 speed = 100
-damage = 100
-max_health = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
