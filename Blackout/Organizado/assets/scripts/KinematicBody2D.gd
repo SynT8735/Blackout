@@ -4,6 +4,7 @@ const arrow = preload("res://Scenes/Arrow.tscn")
 
 export (int) var speed = 100
 export (int) var knockback_speed = 500
+export (int) var health = 10
 
 onready var area = $Area2D
 onready var sprite = $AnimatedSprite
@@ -19,8 +20,23 @@ var charging_bow = false
 var bow_power = 0
 var bow_damage = 0
 
+var timer = null
+var arrow_delay = 0.5
+var can_shoot = true
+
 var velocity := Vector2()
 var is_taking_damage = false
+
+func _ready():
+	#Cooldown for shooting
+	timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(arrow_delay)
+	timer.connect("timeout", self, "on_timeout_complete")
+	add_child(timer)
+	
+func on_timeout_complete():
+	can_shoot = true
 
 func get_input():
 	# Basically just turning input values into single boolean variables
@@ -60,13 +76,13 @@ func get_input():
 	velocity = lerp(velocity, move_to, 0.2)
 
 func get_attack_input():
-	if Input.is_action_pressed("ui_accept") and not charging_bow:
+	if Input.is_action_pressed("ui_accept") and not charging_bow && can_shoot:
 		charging_bow = true
 		velocity = Vector2.ZERO
 		sprite.play("Attack_Bow")
 		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
-	elif Input.is_action_just_released("ui_accept"):
+	elif Input.is_action_just_released("ui_accept") && can_shoot:
 		charging_bow = false
 		tween.stop(self, "bow_power")
 		sprite.play("Idle")
@@ -77,7 +93,13 @@ func get_attack_input():
 		arrow_instance.global_position = global_position
 		arrow_instance.global_position.x += 16 * direction
 		bow_power = 0
-
+		
+		#Disable Shoot
+		can_shoot = false
+		
+		#Start Timer
+		timer.start()
+		
 func _on_left_pressed():
 	touch_left = true
 
@@ -115,6 +137,7 @@ func _physics_process(delta):
 	get_input()
 	get_attack_input()
 	check_for_overlap()
+	die()
 	velocity = move_and_slide(velocity)
 
 # This function is needed because if the player is still under an enemy after
@@ -137,4 +160,12 @@ func take_damage(from_body):
 		velocity = direction * Vector2(knockback_speed, knockback_speed)
 		animation_player.play("taking_damage")
 		yield(animation_player, "animation_finished")
+		health -= 1
+		print("Health: " + str(health))
 		is_taking_damage = false
+		
+func die():
+	if health <= 0:
+		print("Player Died")
+		get_tree().change_scene('res://Scenes/Menu/Menu.tscn')
+	
