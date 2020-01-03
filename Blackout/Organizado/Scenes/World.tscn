@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/HUD/pause.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -64,7 +65,6 @@ normal = ExtResource( 5 )
 passby_press = true
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
 [node name="Pause" type="Control" parent="PauseMenu"]
@@ -110,7 +110,7 @@ margin_right = 721.181
 margin_bottom = 509.279
 custom_styles/focus = SubResource( 3 )
 
-[node name="Button" type="Button" parent="PauseMenu"]
+[node name="pause" type="Button" parent="PauseMenu"]
 pause_mode = 2
 margin_left = 1178.57
 margin_top = 26.6423
@@ -122,7 +122,14 @@ custom_styles/focus = SubResource( 5 )
 icon = ExtResource( 10 )
 flat = true
 
-[node name="Player" parent="." instance=ExtResource( 11 )]
+[node name="GameOverMenu" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="GameOver" parent="GameOverMenu" instance=ExtResource( 11 )]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource( 12 )]
+editor/display_folded = true
 position = Vector2( 144.649, 242.714 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
@@ -133,7 +140,7 @@ limit_right = 2500
 limit_bottom = 720
 editor_draw_limits = true
 
-[node name="Slime" parent="." instance=ExtResource( 12 )]
+[node name="Slime" parent="." instance=ExtResource( 13 )]
 position = Vector2( 492.828, 323.089 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
@@ -149,4 +156,5 @@ position = Vector2( 492.828, 323.089 )
 [connection signal="released" from="HUD/Gamepad/up" to="Player" method="_on_up_released"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
-[connection signal="pressed" from="PauseMenu/Button" to="PauseMenu/Pause" method="_on_Button_pressed"]
+[connection signal="pressed" from="PauseMenu/pause" to="PauseMenu/Pause" method="_on_Button_pressed"]
+[connection signal="player_died" from="Player" to="GameOverMenu/GameOver" method="_on_Player_player_died"]

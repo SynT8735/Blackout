@@ -9,7 +9,7 @@ font_data = ExtResource( 1 )
 [node name="Button" type="Button"]
 margin_right = 12.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 160, 60 )
+rect_min_size = Vector2( 320, 60 )
 flat = true
 
 [node name="Label" type="Label" parent="."]
@@ -19,5 +19,6 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
-text = "MENU"
+text = "Play Again
+"
 uppercase = true

@@ -27,6 +27,8 @@ var can_shoot = true
 var velocity := Vector2()
 var is_taking_damage = false
 
+signal player_died
+
 func _ready():
 	#Cooldown for shooting
 	timer = Timer.new()
@@ -161,11 +163,11 @@ func take_damage(from_body):
 		animation_player.play("taking_damage")
 		yield(animation_player, "animation_finished")
 		health -= 1
-		print("Health: " + str(health))
+		print("Player Health: " + str(health))
 		is_taking_damage = false
 		
 func die():
 	if health <= 0:
 		print("Player Died")
-		get_tree().change_scene('res://Scenes/Menu/Menu.tscn')
-	
+		emit_signal("player_died")
+		get_tree().change_scene('res://Scenes/GameOver.tscn')
