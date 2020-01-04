@@ -140,6 +140,7 @@ func _physics_process(delta):
 	get_attack_input()
 	check_for_overlap()
 	die()
+#	update_health()
 	velocity = move_and_slide(velocity)
 
 # This function is needed because if the player is still under an enemy after
@@ -166,8 +167,10 @@ func take_damage(from_body):
 		print("Player Health: " + str(health))
 		is_taking_damage = false
 		
+#Update Health
+#func update_health():
+		
 func die():
 	if health <= 0:
 		print("Player Died")
 		emit_signal("player_died")
-		get_tree().change_scene('res://Scenes/GameOver.tscn')
