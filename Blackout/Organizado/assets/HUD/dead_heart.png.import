@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart_dead.png-0fb174f10b42bce6a31cc7b2a6f1501d.stex"
+path="res://.import/dead_heart.png-c247c611bccf5ed0aca6aa701a7fa6ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HUD/heart_dead.png"
-dest_files=[ "res://.import/heart_dead.png-0fb174f10b42bce6a31cc7b2a6f1501d.stex" ]
+source_file="res://assets/HUD/dead_heart.png"
+dest_files=[ "res://.import/dead_heart.png-c247c611bccf5ed0aca6aa701a7fa6ac.stex" ]
 
 [params]
 

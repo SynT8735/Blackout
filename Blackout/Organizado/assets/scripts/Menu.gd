@@ -6,17 +6,3 @@ func _on_newgameTouch_released():
 
 func _on_New_Game_pressed():
 	get_tree().change_scene('res://Scenes/World.tscn')
-
-# Quit Button
-func _on_quit_pressed():
-	get_tree().quit()
-
-func _on_quittouch_pressed():
-	get_tree().quit()
-
-
-
-
-
-
-

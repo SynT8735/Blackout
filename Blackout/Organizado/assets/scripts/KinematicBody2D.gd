@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 const arrow = preload("res://Scenes/Arrow.tscn")
+const full_heart = preload("res://assets/HUD/heart.png")
+const half_heart = preload("res://assets/HUD/half_heart.png")
+const empty_heart = preload("res://assets/HUD/dead_heart.png")
 
 export (int) var speed = 100
 export (int) var knockback_speed = 500
@@ -139,6 +142,7 @@ func _physics_process(delta):
 	get_input()
 	get_attack_input()
 	check_for_overlap()
+	update_health()
 	die()
 #	update_health()
 	velocity = move_and_slide(velocity)
@@ -154,7 +158,7 @@ func _on_Area2D_body_entered(body):
 	match body.name:
 		"Slime":
 			take_damage(body)
-
+			
 func take_damage(from_body):
 	if not is_taking_damage:
 		is_taking_damage = true
@@ -166,11 +170,45 @@ func take_damage(from_body):
 		health -= 1
 		print("Player Health: " + str(health))
 		is_taking_damage = false
-		
+			
 #Update Health
-#func update_health():
+onready var heart1 = get_tree().get_root().get_node("World/HUD/Base/Health1")
+onready var heart2 = get_tree().get_root().get_node("World/HUD/Base/Health2")
+onready var heart3 = get_tree().get_root().get_node("World/HUD/Base/Health3")
+onready var heart4 = get_tree().get_root().get_node("World/HUD/Base/Health4")
+onready var heart5 = get_tree().get_root().get_node("World/HUD/Base/Health5")
+
+func update_health():
+	if health == 10:
+		heart5.set_texture(full_heart)
+	
+	if health == 9:
+		heart5.set_texture(half_heart)
+	if health == 8:
+		heart5.set_texture(empty_heart)
+		
+	if health == 7: 
+		heart4.set_texture(half_heart)
+	if health == 6:
+		heart4.set_texture(empty_heart)
+		
+	if health == 5:
+		heart3.set_texture(half_heart)
+	if health == 4:
+		heart3.set_texture(empty_heart)
+		
+	if health == 3:
+		heart2.set_texture(half_heart)
+	if health == 2:
+		heart2.set_texture(empty_heart)
+	
+	if health == 1:
+		heart1.set_texture(half_heart)
+	if health == 0:
+		heart1.set_texture(empty_heart)
 		
 func die():
 	if health <= 0:
 		print("Player Died")
 		emit_signal("player_died")
+		health = 10

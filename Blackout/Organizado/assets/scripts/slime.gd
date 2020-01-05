@@ -26,7 +26,7 @@ func _on_Area2D_body_exited(body):
 
 func take_damage():
 	health -= 1
-	print("Health: " + str(health))
+	print("Slime Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
 	
 func die():

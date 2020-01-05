@@ -82,46 +82,6 @@ margin_bottom = 48.167
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
-[node name="Health6" type="NinePatchRect" parent="HUD/Base"]
-margin_left = 165.254
-margin_top = 8.16702
-margin_right = 205.254
-margin_bottom = 48.167
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 2 )
-
-[node name="Health7" type="NinePatchRect" parent="HUD/Base"]
-margin_left = 195.254
-margin_top = 8.16702
-margin_right = 235.254
-margin_bottom = 48.167
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 2 )
-
-[node name="Health8" type="NinePatchRect" parent="HUD/Base"]
-margin_left = 225.254
-margin_top = 8.16702
-margin_right = 265.254
-margin_bottom = 48.167
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 2 )
-
-[node name="Health9" type="NinePatchRect" parent="HUD/Base"]
-margin_left = 255.254
-margin_top = 8.16702
-margin_right = 295.254
-margin_bottom = 48.167
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 2 )
-
-[node name="Health10" type="NinePatchRect" parent="HUD/Base"]
-margin_left = 285.254
-margin_top = 8.16702
-margin_right = 325.254
-margin_bottom = 48.167
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 2 )
-
 [node name="Gamepad" type="Node2D" parent="HUD"]
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
