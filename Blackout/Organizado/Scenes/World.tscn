@@ -1,23 +1,24 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/HUD/heart.png" type="Texture" id=2]
-[ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=3]
-[ext_resource path="res://assets/HUD/arrows/right.png" type="Texture" id=4]
-[ext_resource path="res://assets/HUD/arrows/down.png" type="Texture" id=5]
-[ext_resource path="res://assets/HUD/arrows/up.png" type="Texture" id=6]
-[ext_resource path="res://assets/scripts/Pause.gd" type="Script" id=7]
-[ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/HUD/pause.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/HUD/energy.png" type="Texture" id=3]
+[ext_resource path="res://assets/HUD/arrows/left.png" type="Texture" id=4]
+[ext_resource path="res://assets/HUD/arrows/right.png" type="Texture" id=5]
+[ext_resource path="res://assets/HUD/arrows/down.png" type="Texture" id=6]
+[ext_resource path="res://assets/HUD/arrows/up.png" type="Texture" id=7]
+[ext_resource path="res://assets/scripts/Pause.gd" type="Script" id=8]
+[ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/HUD/pause.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -38,11 +39,15 @@ position = Vector2( 1, -2 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Base" type="Control" parent="HUD"]
+[node name="HP" type="Control" parent="HUD"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Health1" type="NinePatchRect" parent="HUD/Base"]
+[node name="Health1" type="NinePatchRect" parent="HUD/HP"]
 margin_left = 15.2535
 margin_top = 8.16702
 margin_right = 55.2535
@@ -50,7 +55,7 @@ margin_bottom = 48.167
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
-[node name="Health2" type="NinePatchRect" parent="HUD/Base"]
+[node name="Health2" type="NinePatchRect" parent="HUD/HP"]
 margin_left = 45.2535
 margin_top = 8.16702
 margin_right = 85.2535
@@ -58,7 +63,7 @@ margin_bottom = 48.167
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
-[node name="Health3" type="NinePatchRect" parent="HUD/Base"]
+[node name="Health3" type="NinePatchRect" parent="HUD/HP"]
 margin_left = 75.2535
 margin_top = 8.16702
 margin_right = 115.254
@@ -66,7 +71,7 @@ margin_bottom = 48.167
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
-[node name="Health4" type="NinePatchRect" parent="HUD/Base"]
+[node name="Health4" type="NinePatchRect" parent="HUD/HP"]
 margin_left = 105.254
 margin_top = 8.16702
 margin_right = 145.254
@@ -74,7 +79,7 @@ margin_bottom = 48.167
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
-[node name="Health5" type="NinePatchRect" parent="HUD/Base"]
+[node name="Health5" type="NinePatchRect" parent="HUD/HP"]
 margin_left = 135.254
 margin_top = 8.16702
 margin_right = 175.254
@@ -82,30 +87,77 @@ margin_bottom = 48.167
 rect_scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
+[node name="Energy" type="Control" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Energy1" type="NinePatchRect" parent="HUD/Energy"]
+margin_left = 11.8601
+margin_top = 36.9316
+margin_right = 51.8601
+margin_bottom = 76.9316
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+
+[node name="Energy2" type="NinePatchRect" parent="HUD/Energy"]
+margin_left = 41.8601
+margin_top = 36.9316
+margin_right = 81.8601
+margin_bottom = 76.9316
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+
+[node name="Energy3" type="NinePatchRect" parent="HUD/Energy"]
+margin_left = 71.8601
+margin_top = 36.9316
+margin_right = 111.86
+margin_bottom = 76.9316
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+
+[node name="Energy4" type="NinePatchRect" parent="HUD/Energy"]
+margin_left = 101.86
+margin_top = 36.9316
+margin_right = 141.86
+margin_bottom = 76.9316
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+
+[node name="Energy5" type="NinePatchRect" parent="HUD/Energy"]
+margin_left = 131.86
+margin_top = 36.9316
+margin_right = 171.86
+margin_bottom = 76.9316
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+
 [node name="Gamepad" type="Node2D" parent="HUD"]
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 16.2501, 535.558 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 passby_press = true
 
 [node name="right" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 188.002, 535.472 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 passby_press = true
 
 [node name="down" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 101.768, 622.545 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 5 )
+normal = ExtResource( 6 )
 passby_press = true
 
 [node name="up" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 101.768, 449.947 )
 scale = Vector2( 0.205, 0.205 )
-normal = ExtResource( 6 )
+normal = ExtResource( 7 )
 passby_press = true
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
@@ -116,7 +168,7 @@ pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/Pause"]
 anchor_right = 1.0
@@ -136,7 +188,7 @@ custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
 text = "PAUSED"
 
-[node name="voltarJogo" parent="PauseMenu/Pause" instance=ExtResource( 9 )]
+[node name="voltarJogo" parent="PauseMenu/Pause" instance=ExtResource( 10 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -147,7 +199,7 @@ margin_right = 230.0
 margin_bottom = 30.0
 custom_styles/focus = SubResource( 2 )
 
-[node name="voltarMenu" parent="PauseMenu/Pause" instance=ExtResource( 10 )]
+[node name="voltarMenu" parent="PauseMenu/Pause" instance=ExtResource( 11 )]
 margin_left = 561.181
 margin_top = 449.279
 margin_right = 721.181
@@ -163,17 +215,16 @@ margin_bottom = 48.6423
 rect_scale = Vector2( 2.5, 2.5 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
-icon = ExtResource( 11 )
+icon = ExtResource( 12 )
 flat = true
 
 [node name="GameOverMenu" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="GameOver" parent="GameOverMenu" instance=ExtResource( 12 )]
+[node name="GameOver" parent="GameOverMenu" instance=ExtResource( 13 )]
 visible = false
 
-[node name="Player" parent="." instance=ExtResource( 13 )]
-editor/display_folded = true
+[node name="Player" parent="." instance=ExtResource( 14 )]
 position = Vector2( 196.739, 342.703 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
@@ -184,8 +235,7 @@ limit_right = 2500
 limit_bottom = 720
 editor_draw_limits = true
 
-[node name="Slime" parent="." instance=ExtResource( 14 )]
-editor/display_folded = true
+[node name="Slime" parent="." instance=ExtResource( 15 )]
 position = Vector2( 492.828, 323.089 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]

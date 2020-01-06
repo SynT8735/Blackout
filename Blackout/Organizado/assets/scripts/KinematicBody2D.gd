@@ -4,10 +4,13 @@ const arrow = preload("res://Scenes/Arrow.tscn")
 const full_heart = preload("res://assets/HUD/heart.png")
 const half_heart = preload("res://assets/HUD/half_heart.png")
 const empty_heart = preload("res://assets/HUD/dead_heart.png")
+const full_bolt = preload("res://assets/HUD/energy.png")
+const empty_bolt = preload("res://assets/HUD/dead_energy.png")
 
 export (int) var speed = 100
 export (int) var knockback_speed = 500
 export (int) var health = 10
+export (int) var energy = 5
 
 onready var area = $Area2D
 onready var sprite = $AnimatedSprite
@@ -143,6 +146,7 @@ func _physics_process(delta):
 	get_attack_input()
 	check_for_overlap()
 	update_health()
+	update_energy()
 	die()
 #	update_health()
 	velocity = move_and_slide(velocity)
@@ -172,11 +176,11 @@ func take_damage(from_body):
 		is_taking_damage = false
 			
 #Update Health
-onready var heart1 = get_tree().get_root().get_node("World/HUD/Base/Health1")
-onready var heart2 = get_tree().get_root().get_node("World/HUD/Base/Health2")
-onready var heart3 = get_tree().get_root().get_node("World/HUD/Base/Health3")
-onready var heart4 = get_tree().get_root().get_node("World/HUD/Base/Health4")
-onready var heart5 = get_tree().get_root().get_node("World/HUD/Base/Health5")
+onready var heart1 = get_tree().get_root().get_node("World/HUD/HP/Health1")
+onready var heart2 = get_tree().get_root().get_node("World/HUD/HP/Health2")
+onready var heart3 = get_tree().get_root().get_node("World/HUD/HP/Health3")
+onready var heart4 = get_tree().get_root().get_node("World/HUD/HP/Health4")
+onready var heart5 = get_tree().get_root().get_node("World/HUD/HP/Health5")
 
 func update_health():
 	if health == 10:
@@ -207,8 +211,35 @@ func update_health():
 	if health == 0:
 		heart1.set_texture(empty_heart)
 		
+#Update Energy
+onready var energy1 = get_tree().get_root().get_node("World/HUD/Energy/Energy1")
+onready var energy2 = get_tree().get_root().get_node("World/HUD/Energy/Energy2")
+onready var energy3 = get_tree().get_root().get_node("World/HUD/Energy/Energy3")
+onready var energy4 = get_tree().get_root().get_node("World/HUD/Energy/Energy4")
+onready var energy5 = get_tree().get_root().get_node("World/HUD/Energy/Energy5")
+
+func update_energy():
+	if energy == 5:
+		energy5.set_texture(full_bolt)
+		
+	if energy == 4:
+		energy5.set_texture(empty_bolt)
+		
+	if energy == 3:
+		energy4.set_texture(empty_bolt)
+		
+	if energy == 2: 
+		energy3.set_texture(empty_bolt)
+		
+	if energy == 1:
+		energy2.set_texture(empty_bolt)
+		
+	if energy == 0:
+		energy1.set_texture(empty_bolt)
+		
 func die():
 	if health <= 0:
 		print("Player Died")
 		emit_signal("player_died")
 		health = 10
+		energy = 5
