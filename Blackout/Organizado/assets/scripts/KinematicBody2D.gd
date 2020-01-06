@@ -21,6 +21,7 @@ var touch_left := false
 var touch_right := false
 var touch_up := false
 var touch_down := false
+var attack := false
 
 var charging_bow = false
 var bow_power = 0
@@ -84,13 +85,13 @@ func get_input():
 	velocity = lerp(velocity, move_to, 0.2)
 
 func get_attack_input():
-	if Input.is_action_pressed("ui_accept") and not charging_bow && can_shoot:
+	if Input.is_action_pressed("ui_accept") and not charging_bow && can_shoot or attack and not charging_bow && can_shoot:
 		charging_bow = true
 		velocity = Vector2.ZERO
 		sprite.play("Attack_Bow")
 		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
-	elif Input.is_action_just_released("ui_accept") && can_shoot:
+	elif Input.is_action_just_released("ui_accept") && can_shoot or attack && can_shoot:
 		charging_bow = false
 		tween.stop(self, "bow_power")
 		sprite.play("Idle")
@@ -243,3 +244,9 @@ func die():
 		emit_signal("player_died")
 		health = 10
 		energy = 5
+
+func _on_attack_pressed():
+	attack = true
+
+func _on_attack_released():
+	attack = false
