@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=95 format=2]
+[gd_resource type="TileSet" load_steps=98 format=2]
 
 [ext_resource path="res://assets/sprites/tileset_completo.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/arvores_tronco.png" type="Texture" id=2]
@@ -12,16 +12,19 @@
 [ext_resource path="res://assets/sprites/cerca2.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/canto_floresta4.png" type="Texture" id=11]
 [ext_resource path="res://assets/sprites/tabuleta.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/arvores.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/cerca.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/curvar_estrada.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/poste.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/cantos_cerca.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/sprite_0.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/agua_suja.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/agua_suja2.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/agua_suja_juncao.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/arvore_escura.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/canto_inferno.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/escada_saidaMapa.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/pedra_lava.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/arvores.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/cerca.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/curvar_estrada.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/poste.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/cantos_cerca.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/sprite_0.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/agua_suja.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/agua_suja2.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/agua_suja_juncao.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/arvore_escura.png" type="Texture" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 4.185, 36.2255, 11.6272, 35.9929, 11.6272, 40.8768, 4.185, 40.8768 )
@@ -753,7 +756,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 45/z_index = 0
 46/name = "arvores"
-46/texture = ExtResource( 13 )
+46/texture = ExtResource( 16 )
 46/tex_offset = Vector2( 0, 0 )
 46/modulate = Color( 1, 1, 1, 1 )
 46/region = Rect2( 16, 16, 128, 176 )
@@ -769,7 +772,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 46/z_index = 0
 48/name = "cerca.png 48"
-48/texture = ExtResource( 14 )
+48/texture = ExtResource( 17 )
 48/tex_offset = Vector2( 0, 0 )
 48/modulate = Color( 1, 1, 1, 1 )
 48/region = Rect2( 16, 3, 56, 24 )
@@ -785,7 +788,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 48/z_index = 0
 49/name = "curvar_estrada.png 49"
-49/texture = ExtResource( 15 )
+49/texture = ExtResource( 18 )
 49/tex_offset = Vector2( 0, 0 )
 49/modulate = Color( 1, 1, 1, 1 )
 49/region = Rect2( 0, 0, 64, 64 )
@@ -795,7 +798,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 49/shapes = [  ]
 49/z_index = 0
 50/name = "poste.png 50"
-50/texture = ExtResource( 16 )
+50/texture = ExtResource( 19 )
 50/tex_offset = Vector2( 0, 0 )
 50/modulate = Color( 1, 1, 1, 1 )
 50/region = Rect2( 8, 16, 16, 48 )
@@ -811,7 +814,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 50/z_index = 0
 52/name = "cerca_canto1"
-52/texture = ExtResource( 17 )
+52/texture = ExtResource( 20 )
 52/tex_offset = Vector2( 0, 0 )
 52/modulate = Color( 1, 1, 1, 1 )
 52/region = Rect2( 0, 5, 16, 56 )
@@ -833,7 +836,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 52/z_index = 0
 53/name = "cantos_cerca.png 53"
-53/texture = ExtResource( 17 )
+53/texture = ExtResource( 20 )
 53/tex_offset = Vector2( 0, 0 )
 53/modulate = Color( 1, 1, 1, 1 )
 53/region = Rect2( 18, 5, 16, 56 )
@@ -859,7 +862,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 55/shapes = [  ]
 55/z_index = 0
 56/name = "sprite_0.png 56"
-56/texture = ExtResource( 18 )
+56/texture = ExtResource( 21 )
 56/tex_offset = Vector2( 0, 0 )
 56/modulate = Color( 1, 1, 1, 1 )
 56/region = Rect2( 0, 0, 32, 80 )
@@ -1325,7 +1328,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 95/z_index = 0
 96/name = "agua_suja.png 96"
-96/texture = ExtResource( 19 )
+96/texture = ExtResource( 22 )
 96/tex_offset = Vector2( 0, 0 )
 96/modulate = Color( 1, 1, 1, 1 )
 96/region = Rect2( 0, 0, 16, 16 )
@@ -1341,7 +1344,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 96/z_index = 0
 97/name = "agua_suja2.png 97"
-97/texture = ExtResource( 20 )
+97/texture = ExtResource( 23 )
 97/tex_offset = Vector2( 0, 0 )
 97/modulate = Color( 1, 1, 1, 1 )
 97/region = Rect2( 0, 0, 16, 16 )
@@ -1357,7 +1360,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 97/z_index = 0
 98/name = "agua_suja_juncao.png 98"
-98/texture = ExtResource( 21 )
+98/texture = ExtResource( 24 )
 98/tex_offset = Vector2( 0, 0 )
 98/modulate = Color( 1, 1, 1, 1 )
 98/region = Rect2( 0, 0, 16, 16 )
@@ -1373,7 +1376,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 98/z_index = 0
 99/name = "arvore_escura.png 99"
-99/texture = ExtResource( 22 )
+99/texture = ExtResource( 25 )
 99/tex_offset = Vector2( 0, 0 )
 99/modulate = Color( 1, 1, 1, 1 )
 99/region = Rect2( 0, 0, 160, 192 )
@@ -1726,3 +1729,265 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 138/z_index = 0
+139/name = "tileset_completo.png 139"
+139/texture = ExtResource( 1 )
+139/tex_offset = Vector2( 0, 0 )
+139/modulate = Color( 1, 1, 1, 1 )
+139/region = Rect2( 544, 336, 64, 32 )
+139/tile_mode = 0
+139/occluder_offset = Vector2( 0, 0 )
+139/navigation_offset = Vector2( 0, 0 )
+139/shapes = [  ]
+139/z_index = 0
+140/name = "tileset_completo.png 140"
+140/texture = ExtResource( 1 )
+140/tex_offset = Vector2( 0, 0 )
+140/modulate = Color( 1, 1, 1, 1 )
+140/region = Rect2( 544, 384, 64, 32 )
+140/tile_mode = 0
+140/occluder_offset = Vector2( 0, 0 )
+140/navigation_offset = Vector2( 0, 0 )
+140/shapes = [  ]
+140/z_index = 0
+141/name = "tileset_completo.png 141"
+141/texture = ExtResource( 1 )
+141/tex_offset = Vector2( 0, 0 )
+141/modulate = Color( 1, 1, 1, 1 )
+141/region = Rect2( 544, 432, 64, 64 )
+141/tile_mode = 0
+141/occluder_offset = Vector2( 0, 0 )
+141/navigation_offset = Vector2( 0, 0 )
+141/shapes = [  ]
+141/z_index = 0
+143/name = "tileset_completo.png 143"
+143/texture = ExtResource( 1 )
+143/tex_offset = Vector2( 0, 0 )
+143/modulate = Color( 1, 1, 1, 1 )
+143/region = Rect2( 624, 448, 48, 48 )
+143/tile_mode = 0
+143/occluder_offset = Vector2( 0, 0 )
+143/navigation_offset = Vector2( 0, 0 )
+143/shapes = [  ]
+143/z_index = 0
+144/name = "tileset_completo.png 144"
+144/texture = ExtResource( 1 )
+144/tex_offset = Vector2( 0, 0 )
+144/modulate = Color( 1, 1, 1, 1 )
+144/region = Rect2( 688, 448, 16, 48 )
+144/tile_mode = 0
+144/occluder_offset = Vector2( 0, 0 )
+144/navigation_offset = Vector2( 0, 0 )
+144/shapes = [  ]
+144/z_index = 0
+145/name = "tileset_completo.png 145"
+145/texture = ExtResource( 1 )
+145/tex_offset = Vector2( 0, 0 )
+145/modulate = Color( 1, 1, 1, 1 )
+145/region = Rect2( 720, 448, 16, 48 )
+145/tile_mode = 0
+145/occluder_offset = Vector2( 0, 0 )
+145/navigation_offset = Vector2( 0, 0 )
+145/shapes = [  ]
+145/z_index = 0
+146/name = "tileset_completo.png 146"
+146/texture = ExtResource( 1 )
+146/tex_offset = Vector2( 0, 0 )
+146/modulate = Color( 1, 1, 1, 1 )
+146/region = Rect2( 752, 448, 16, 48 )
+146/tile_mode = 0
+146/occluder_offset = Vector2( 0, 0 )
+146/navigation_offset = Vector2( 0, 0 )
+146/shapes = [  ]
+146/z_index = 0
+147/name = "tileset_completo.png 147"
+147/texture = ExtResource( 1 )
+147/tex_offset = Vector2( 0, 0 )
+147/modulate = Color( 1, 1, 1, 1 )
+147/region = Rect2( 784, 448, 48, 48 )
+147/tile_mode = 0
+147/occluder_offset = Vector2( 0, 0 )
+147/navigation_offset = Vector2( 0, 0 )
+147/shapes = [  ]
+147/z_index = 0
+148/name = "tileset_completo.png 148"
+148/texture = ExtResource( 1 )
+148/tex_offset = Vector2( 0, 0 )
+148/modulate = Color( 1, 1, 1, 1 )
+148/region = Rect2( 688, 288, 32, 32 )
+148/tile_mode = 0
+148/occluder_offset = Vector2( 0, 0 )
+148/navigation_offset = Vector2( 0, 0 )
+148/shapes = [  ]
+148/z_index = 0
+149/name = "tileset_completo.png 149"
+149/texture = ExtResource( 1 )
+149/tex_offset = Vector2( 0, 0 )
+149/modulate = Color( 1, 1, 1, 1 )
+149/region = Rect2( 736, 288, 16, 32 )
+149/tile_mode = 0
+149/occluder_offset = Vector2( 0, 0 )
+149/navigation_offset = Vector2( 0, 0 )
+149/shapes = [  ]
+149/z_index = 0
+150/name = "tileset_completo.png 150"
+150/texture = ExtResource( 1 )
+150/tex_offset = Vector2( 0, 0 )
+150/modulate = Color( 1, 1, 1, 1 )
+150/region = Rect2( 768, 288, 16, 32 )
+150/tile_mode = 0
+150/occluder_offset = Vector2( 0, 0 )
+150/navigation_offset = Vector2( 0, 0 )
+150/shapes = [  ]
+150/z_index = 0
+151/name = "tileset_completo.png 151"
+151/texture = ExtResource( 1 )
+151/tex_offset = Vector2( 0, 0 )
+151/modulate = Color( 1, 1, 1, 1 )
+151/region = Rect2( 800, 288, 32, 32 )
+151/tile_mode = 0
+151/occluder_offset = Vector2( 0, 0 )
+151/navigation_offset = Vector2( 0, 0 )
+151/shapes = [  ]
+151/z_index = 0
+152/name = "tileset_completo.png 152"
+152/texture = ExtResource( 1 )
+152/tex_offset = Vector2( 0, 0 )
+152/modulate = Color( 1, 1, 1, 1 )
+152/region = Rect2( 784, 304, 16, 16 )
+152/tile_mode = 0
+152/occluder_offset = Vector2( 0, 0 )
+152/navigation_offset = Vector2( 0, 0 )
+152/shapes = [  ]
+152/z_index = 0
+153/name = "tileset_completo.png 153"
+153/texture = ExtResource( 1 )
+153/tex_offset = Vector2( 0, 0 )
+153/modulate = Color( 1, 1, 1, 1 )
+153/region = Rect2( 752, 304, 16, 16 )
+153/tile_mode = 0
+153/occluder_offset = Vector2( 0, 0 )
+153/navigation_offset = Vector2( 0, 0 )
+153/shapes = [  ]
+153/z_index = 0
+154/name = "tileset_completo.png 154"
+154/texture = ExtResource( 1 )
+154/tex_offset = Vector2( 0, 0 )
+154/modulate = Color( 1, 1, 1, 1 )
+154/region = Rect2( 720, 304, 16, 16 )
+154/tile_mode = 0
+154/occluder_offset = Vector2( 0, 0 )
+154/navigation_offset = Vector2( 0, 0 )
+154/shapes = [  ]
+154/z_index = 0
+155/name = "tileset_completo.png 155"
+155/texture = ExtResource( 1 )
+155/tex_offset = Vector2( 0, 0 )
+155/modulate = Color( 1, 1, 1, 1 )
+155/region = Rect2( 552, 296, 24, 24 )
+155/tile_mode = 0
+155/occluder_offset = Vector2( 0, 0 )
+155/navigation_offset = Vector2( 0, 0 )
+155/shapes = [  ]
+155/z_index = 0
+156/name = "tileset_completo.png 156"
+156/texture = ExtResource( 1 )
+156/tex_offset = Vector2( 0, 0 )
+156/modulate = Color( 1, 1, 1, 1 )
+156/region = Rect2( 592, 296, 16, 24 )
+156/tile_mode = 0
+156/occluder_offset = Vector2( 0, 0 )
+156/navigation_offset = Vector2( 0, 0 )
+156/shapes = [  ]
+156/z_index = 0
+157/name = "tileset_completo.png 157"
+157/texture = ExtResource( 1 )
+157/tex_offset = Vector2( 0, 0 )
+157/modulate = Color( 1, 1, 1, 1 )
+157/region = Rect2( 616, 288, 24, 32 )
+157/tile_mode = 0
+157/occluder_offset = Vector2( 0, 0 )
+157/navigation_offset = Vector2( 0, 0 )
+157/shapes = [  ]
+157/z_index = 0
+158/name = "tileset_completo.png 158"
+158/texture = ExtResource( 1 )
+158/tex_offset = Vector2( 0, 0 )
+158/modulate = Color( 1, 1, 1, 1 )
+158/region = Rect2( 736, 336, 64, 64 )
+158/tile_mode = 2
+158/autotile/icon_coordinate = Vector2( 0, 0 )
+158/autotile/tile_size = Vector2( 32, 32 )
+158/autotile/spacing = 0
+158/autotile/occluder_map = [  ]
+158/autotile/navpoly_map = [  ]
+158/autotile/z_index_map = [  ]
+158/occluder_offset = Vector2( 0, 0 )
+158/navigation_offset = Vector2( 0, 0 )
+158/shapes = [  ]
+158/z_index = 0
+159/name = "canto_inferno.png 159"
+159/texture = ExtResource( 13 )
+159/tex_offset = Vector2( 0, 0 )
+159/modulate = Color( 1, 1, 1, 1 )
+159/region = Rect2( 8, 8, 48, 48 )
+159/tile_mode = 0
+159/occluder_offset = Vector2( 0, 0 )
+159/navigation_offset = Vector2( 0, 0 )
+159/shapes = [  ]
+159/z_index = 0
+160/name = "tileset_completo.png 160"
+160/texture = ExtResource( 1 )
+160/tex_offset = Vector2( 0, 0 )
+160/modulate = Color( 1, 1, 1, 1 )
+160/region = Rect2( 624, 368, 32, 48 )
+160/tile_mode = 2
+160/autotile/icon_coordinate = Vector2( 0, 1 )
+160/autotile/tile_size = Vector2( 16, 16 )
+160/autotile/spacing = 0
+160/autotile/occluder_map = [  ]
+160/autotile/navpoly_map = [  ]
+160/autotile/z_index_map = [  ]
+160/occluder_offset = Vector2( 0, 0 )
+160/navigation_offset = Vector2( 0, 0 )
+160/shapes = [  ]
+160/z_index = 0
+161/name = "tileset_completo.png 161"
+161/texture = ExtResource( 1 )
+161/tex_offset = Vector2( 0, 0 )
+161/modulate = Color( 1, 1, 1, 1 )
+161/region = Rect2( 408, 528, 96, 96 )
+161/tile_mode = 0
+161/occluder_offset = Vector2( 0, 0 )
+161/navigation_offset = Vector2( 0, 0 )
+161/shapes = [  ]
+161/z_index = 0
+162/name = "escada_saidaMapa.png 162"
+162/texture = ExtResource( 14 )
+162/tex_offset = Vector2( 0, 0 )
+162/modulate = Color( 1, 1, 1, 1 )
+162/region = Rect2( 5, 11, 48, 48 )
+162/tile_mode = 0
+162/occluder_offset = Vector2( 0, 0 )
+162/navigation_offset = Vector2( 0, 0 )
+162/shapes = [  ]
+162/z_index = 0
+163/name = "escada_saidaMapa.png 163"
+163/texture = ExtResource( 14 )
+163/tex_offset = Vector2( 0, 0 )
+163/modulate = Color( 1, 1, 1, 1 )
+163/region = Rect2( 68, 11, 48, 48 )
+163/tile_mode = 0
+163/occluder_offset = Vector2( 0, 0 )
+163/navigation_offset = Vector2( 0, 0 )
+163/shapes = [  ]
+163/z_index = 0
+164/name = "pedra_lava.png 164"
+164/texture = ExtResource( 15 )
+164/tex_offset = Vector2( 0, 0 )
+164/modulate = Color( 1, 1, 1, 1 )
+164/region = Rect2( 0, 0, 32, 32 )
+164/tile_mode = 0
+164/occluder_offset = Vector2( 0, 0 )
+164/navigation_offset = Vector2( 0, 0 )
+164/shapes = [  ]
+164/z_index = 0
