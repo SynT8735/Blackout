@@ -140,32 +140,32 @@ texture = ExtResource( 3 )
 [node name="Gamepad" type="Node2D" parent="HUD"]
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 35.4954, 501.541 )
-scale = Vector2( 1.6, 1.6 )
+position = Vector2( 48, 460 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 4 )
 passby_press = true
 
 [node name="right" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 230.453, 501.318 )
-scale = Vector2( 1.6, 1.6 )
+position = Vector2( 268, 460 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 5 )
 passby_press = true
 
 [node name="down" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 133.29, 587.327 )
-scale = Vector2( 1.6, 1.6 )
+position = Vector2( 160, 570 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 6 )
 passby_press = true
 
 [node name="up" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 132.072, 417.907 )
-scale = Vector2( 1.6, 1.6 )
+position = Vector2( 160, 350 )
+scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 7 )
 passby_press = true
 
 [node name="attack" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 1028.04, 454.525 )
-scale = Vector2( 3, 3 )
+position = Vector2( 967.746, 394.231 )
+scale = Vector2( 3.65, 3.65 )
 normal = ExtResource( 8 )
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
@@ -216,11 +216,12 @@ custom_styles/focus = SubResource( 3 )
 
 [node name="pause" type="Button" parent="PauseMenu"]
 pause_mode = 2
-margin_left = 1193.23
+margin_left = 1194.59
 margin_top = 21.7552
-margin_right = 1253.23
+margin_right = 1254.59
 margin_bottom = 75.7552
 rect_scale = Vector2( 1.15, 1.15 )
+size_flags_stretch_ratio = 0.0
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 icon = ExtResource( 13 )
@@ -253,7 +254,7 @@ position = Vector2( 505.463, 331.212 )
 [node name="Tween" type="Tween" parent="Slime"]
 
 [node name="Slime2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 389.882, 494.573 )
+position = Vector2( 1142.03, 431.527 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime2"]
 
