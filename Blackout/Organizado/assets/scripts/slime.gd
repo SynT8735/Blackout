@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed
-export (int) var health = 10
+export (int) var health = 3
 
 onready var sprite = $AnimatedSprite
 
@@ -11,7 +11,7 @@ var player = null
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	if player:
-		velocity = (player.global_position - global_position).normalized() * speed	
+		velocity = (player.global_position - global_position).normalized() * speed
 	velocity = move_and_slide(velocity)
 	die()
 	anim()

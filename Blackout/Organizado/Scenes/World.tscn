@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/HUD/heart.png" type="Texture" id=2]
@@ -12,10 +12,12 @@
 [ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/HUD/pause.png" type="Texture" id=13]
+[ext_resource path="res://assets/HUD/transparentDark12.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/slime2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/slime3.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -31,7 +33,7 @@ font_data = ExtResource( 10 )
 
 [node name="World" type="Node"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 695.776, 652.42, 36.3232 ],
+"_edit_horizontal_guides_": [ 695.776, 652.42, 36.3232, 629.077 ],
 "_edit_vertical_guides_": [ 66.3985 ]
 }
 
@@ -138,32 +140,32 @@ texture = ExtResource( 3 )
 [node name="Gamepad" type="Node2D" parent="HUD"]
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 38.2162, 508.605 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 35.4954, 501.541 )
+scale = Vector2( 1.6, 1.6 )
 normal = ExtResource( 4 )
 passby_press = true
 
 [node name="right" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 197.245, 513.742 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 230.453, 501.318 )
+scale = Vector2( 1.6, 1.6 )
 normal = ExtResource( 5 )
 passby_press = true
 
 [node name="down" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 122.641, 599.382 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 133.29, 587.327 )
+scale = Vector2( 1.6, 1.6 )
 normal = ExtResource( 6 )
 passby_press = true
 
 [node name="up" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 121.301, 425.265 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 132.072, 417.907 )
+scale = Vector2( 1.6, 1.6 )
 normal = ExtResource( 7 )
 passby_press = true
 
 [node name="attack" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 1051.48, 488.531 )
-scale = Vector2( 2.3, 2.3 )
+position = Vector2( 1028.04, 454.525 )
+scale = Vector2( 3, 3 )
 normal = ExtResource( 8 )
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
@@ -214,11 +216,11 @@ custom_styles/focus = SubResource( 3 )
 
 [node name="pause" type="Button" parent="PauseMenu"]
 pause_mode = 2
-margin_left = 1178.57
-margin_top = 26.6423
-margin_right = 1206.57
-margin_bottom = 48.6423
-rect_scale = Vector2( 2.5, 2.5 )
+margin_left = 1193.23
+margin_top = 21.7552
+margin_right = 1253.23
+margin_bottom = 75.7552
+rect_scale = Vector2( 1.15, 1.15 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 icon = ExtResource( 13 )
@@ -231,6 +233,7 @@ layer = 100
 visible = false
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
+editor/display_folded = true
 position = Vector2( 196.739, 342.703 )
 speed = 125
 
@@ -243,11 +246,25 @@ limit_bottom = 720
 editor_draw_limits = true
 
 [node name="Slime" parent="." instance=ExtResource( 16 )]
-position = Vector2( 492.828, 323.089 )
+position = Vector2( 505.463, 331.212 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
 
 [node name="Tween" type="Tween" parent="Slime"]
+
+[node name="Slime2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 389.882, 494.573 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime2"]
+
+[node name="Tween" type="Tween" parent="Slime2"]
+
+[node name="Slime3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 603.776, 463.888 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime3"]
+
+[node name="Tween" type="Tween" parent="Slime3"]
 [connection signal="pressed" from="HUD/Gamepad/left" to="Player" method="_on_left_pressed"]
 [connection signal="released" from="HUD/Gamepad/left" to="Player" method="_on_left_released"]
 [connection signal="pressed" from="HUD/Gamepad/right" to="Player" method="_on_right_pressed"]

@@ -27,7 +27,7 @@ speed = 175
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
-animation = "Idle"
+animation = "Attack_Bow"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 4.84273, -6.0688, 5.00032, 3.00113, 4.01923, 3.03192, 4.06704, 4.02591, 3.02397, 4.00761, 3.04227, 5.05069, 3.00629, 6.04336, 3.09716, 12.9927, 1.99918, 13.0293, -2.02672, 13.011, -4.09458, 12.9744, -3.97944, 10.038, -3.99774, 8.02509, -3.97944, 5.97554, -3.96556, 5.04849, -5.13231, 5.00566, -5.05911, 3.04761, -5.11969, -5.9878 )

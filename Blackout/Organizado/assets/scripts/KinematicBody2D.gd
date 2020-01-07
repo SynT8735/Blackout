@@ -85,13 +85,13 @@ func get_input():
 	velocity = lerp(velocity, move_to, 0.2)
 
 func get_attack_input():
-	if Input.is_action_pressed("ui_accept") and not charging_bow && can_shoot or attack and not charging_bow && can_shoot:
+	if Input.is_action_pressed("ui_accept") and not charging_bow && can_shoot || attack and not charging_bow and can_shoot:
 		charging_bow = true
 		velocity = Vector2.ZERO
 		sprite.play("Attack_Bow")
 		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
-	elif Input.is_action_just_released("ui_accept") && can_shoot or attack && can_shoot:
+	elif Input.is_action_just_released("ui_accept") && can_shoot || attack and can_shoot:
 		charging_bow = false
 		tween.stop(self, "bow_power")
 		sprite.play("Idle")
@@ -102,7 +102,14 @@ func get_attack_input():
 		arrow_instance.global_position = global_position
 		arrow_instance.global_position.x += 16 * direction
 		bow_power = 0
+		print("Shoot")
 		
+		#Optimize Arrow
+		if get_tree().get_nodes_in_group("arrows").size() >= 3:
+			for arrow in get_tree().get_nodes_in_group("arrows"):
+				arrow.queue_free()
+				print("deleted arrows")
+	
 		#Disable Shoot
 		can_shoot = false
 		
@@ -149,7 +156,6 @@ func _physics_process(delta):
 	update_health()
 	update_energy()
 	die()
-#	update_health()
 	velocity = move_and_slide(velocity)
 
 # This function is needed because if the player is still under an enemy after
@@ -161,19 +167,19 @@ func check_for_overlap():
 
 func _on_Area2D_body_entered(body):
 	match body.name:
-		"Slime":
+		"Slime", "Slime2", "Slime3":
 			take_damage(body)
 			
 func take_damage(from_body):
 	if not is_taking_damage:
 		is_taking_damage = true
+		health -= 1
+		print("Player Health: " + str(health))
 		var diff = global_position - from_body.global_position
 		var direction = diff / Vector2(abs(diff.x), abs(diff.y))
 		velocity = direction * Vector2(knockback_speed, knockback_speed)
 		animation_player.play("taking_damage")
 		yield(animation_player, "animation_finished")
-		health -= 1
-		print("Player Health: " + str(health))
 		is_taking_damage = false
 			
 #Update Health
@@ -186,30 +192,25 @@ onready var heart5 = get_tree().get_root().get_node("World/HUD/HP/Health5")
 func update_health():
 	if health == 10:
 		heart5.set_texture(full_heart)
-	
 	if health == 9:
 		heart5.set_texture(half_heart)
 	if health == 8:
 		heart5.set_texture(empty_heart)
-		
 	if health == 7: 
 		heart4.set_texture(half_heart)
 	if health == 6:
 		heart4.set_texture(empty_heart)
-		
 	if health == 5:
 		heart3.set_texture(half_heart)
 	if health == 4:
 		heart3.set_texture(empty_heart)
-		
 	if health == 3:
 		heart2.set_texture(half_heart)
 	if health == 2:
 		heart2.set_texture(empty_heart)
-	
 	if health == 1:
 		heart1.set_texture(half_heart)
-	if health == 0:
+	if health <= 0:
 		heart1.set_texture(empty_heart)
 		
 #Update Energy
@@ -222,19 +223,14 @@ onready var energy5 = get_tree().get_root().get_node("World/HUD/Energy/Energy5")
 func update_energy():
 	if energy == 5:
 		energy5.set_texture(full_bolt)
-		
 	if energy == 4:
 		energy5.set_texture(empty_bolt)
-		
 	if energy == 3:
 		energy4.set_texture(empty_bolt)
-		
 	if energy == 2: 
 		energy3.set_texture(empty_bolt)
-		
 	if energy == 1:
 		energy2.set_texture(empty_bolt)
-		
 	if energy == 0:
 		energy1.set_texture(empty_bolt)
 		
