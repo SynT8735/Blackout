@@ -18,3 +18,7 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 1441814, 161, 0, 1441832, 161, 0, 1441836, 161, 0, 1507348, 161, 0, 1507354, 161, 0, 1507370, 161, 0, 1638427, 157, 0, 1638438, 157, 0, 1703966, 157, 0, 1769508, 157, 0, 1769512, 157, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 563.937, 255.168 )
+zoom = Vector2( 0.52, 0.52 )
