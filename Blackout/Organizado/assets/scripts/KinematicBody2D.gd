@@ -240,6 +240,7 @@ func die():
 		emit_signal("player_died")
 		health = 10
 		energy = 5
+		hide()
 
 func _on_attack_pressed():
 	attack = true
