@@ -17,15 +17,3 @@ func _on_New_Game_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()
-
-func _on_Audio_pressed():
-	music_button.pressed = false
-	
-	if music_button.pressed == false:
-		music_button.set_texture(mute_music)
-	if music_button.pressed == true:
-		music_button.set_texture(music)
-
-func _on_SFX_pressed():
-	sfx_button.pressed = false
-	

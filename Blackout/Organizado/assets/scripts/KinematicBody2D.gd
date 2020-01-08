@@ -85,13 +85,14 @@ func get_input():
 	velocity = lerp(velocity, move_to, 0.2)
 
 func get_attack_input():
-	if Input.is_action_pressed("ui_accept") and not charging_bow && can_shoot || attack and not charging_bow and can_shoot:
+	if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot || attack and not charging_bow and can_shoot:
 		charging_bow = true
 		velocity = Vector2.ZERO
 		sprite.play("Attack_Bow")
 		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
-	elif Input.is_action_just_released("ui_accept") && can_shoot || attack and can_shoot:
+		yield(AnimatedSprite, "finished")
+	elif Input.is_action_just_released("ui_accept") and can_shoot || attack and can_shoot:
 		charging_bow = false
 		tween.stop(self, "bow_power")
 		sprite.play("Idle")

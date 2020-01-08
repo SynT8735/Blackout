@@ -236,11 +236,10 @@ position = Vector2( 196.739, 342.703 )
 speed = 125
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
+visible = false
 zoom = Vector2( 0.3, 0.3 )
 
 [node name="Slime" parent="." instance=ExtResource( 16 )]
-editor/display_folded = true
 position = Vector2( 505.463, 331.212 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
