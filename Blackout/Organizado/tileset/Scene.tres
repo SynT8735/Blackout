@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=98 format=2]
+[gd_resource type="TileSet" load_steps=102 format=2]
 
 [ext_resource path="res://assets/sprites/tileset_completo.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/arvores_tronco.png" type="Texture" id=2]
@@ -15,16 +15,19 @@
 [ext_resource path="res://assets/sprites/canto_inferno.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/escada_saidaMapa.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/pedra_lava.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/arvores.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/cerca.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/curvar_estrada.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/poste.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/cantos_cerca.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/sprite_0.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/agua_suja.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/agua_suja2.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/agua_suja_juncao.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/arvore_escura.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/cascatas/waterfall_0.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/cascatas/waterfall_1.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/cascatas/waterfall_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/arvores.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/cerca.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/curvar_estrada.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/poste.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/cantos_cerca.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/sprite_0.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/agua_suja.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/agua_suja2.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/agua_suja_juncao.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/arvore_escura.png" type="Texture" id=28]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 4.185, 36.2255, 11.6272, 35.9929, 11.6272, 40.8768, 4.185, 40.8768 )
@@ -78,6 +81,16 @@ points = PoolVector2Array( 32, 0, 32, 32, 0, 32, 0, 9.26271, 8.86505, 9.03014, 8
 
 [sub_resource type="ConvexPolygonShape2D" id=18]
 points = PoolVector2Array( 22.9573, 9.96042, 32, 9.72784, 32, 32, 0, 32, 0, 0, 22.9573, 0.192566 )
+
+[sub_resource type="AnimatedTexture" id=73]
+flags = 4
+frames = 3
+fps = 8.0
+frame_0/texture = ExtResource( 16 )
+frame_1/texture = ExtResource( 17 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 18 )
+frame_2/delay_sec = 0.0
 
 [sub_resource type="OccluderPolygon2D" id=19]
 polygon = PoolVector2Array( 32, 16, 32, 0, 0, 0, 0, 16 )
@@ -756,7 +769,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 45/z_index = 0
 46/name = "arvores"
-46/texture = ExtResource( 16 )
+46/texture = ExtResource( 19 )
 46/tex_offset = Vector2( 0, 0 )
 46/modulate = Color( 1, 1, 1, 1 )
 46/region = Rect2( 16, 16, 128, 176 )
@@ -772,7 +785,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 46/z_index = 0
 48/name = "cerca.png 48"
-48/texture = ExtResource( 17 )
+48/texture = ExtResource( 20 )
 48/tex_offset = Vector2( 0, 0 )
 48/modulate = Color( 1, 1, 1, 1 )
 48/region = Rect2( 16, 3, 56, 24 )
@@ -788,7 +801,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 48/z_index = 0
 49/name = "curvar_estrada.png 49"
-49/texture = ExtResource( 18 )
+49/texture = ExtResource( 21 )
 49/tex_offset = Vector2( 0, 0 )
 49/modulate = Color( 1, 1, 1, 1 )
 49/region = Rect2( 0, 0, 64, 64 )
@@ -798,7 +811,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 49/shapes = [  ]
 49/z_index = 0
 50/name = "poste.png 50"
-50/texture = ExtResource( 19 )
+50/texture = ExtResource( 22 )
 50/tex_offset = Vector2( 0, 0 )
 50/modulate = Color( 1, 1, 1, 1 )
 50/region = Rect2( 8, 16, 16, 48 )
@@ -814,7 +827,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 50/z_index = 0
 52/name = "cerca_canto1"
-52/texture = ExtResource( 20 )
+52/texture = ExtResource( 23 )
 52/tex_offset = Vector2( 0, 0 )
 52/modulate = Color( 1, 1, 1, 1 )
 52/region = Rect2( 0, 5, 16, 56 )
@@ -836,7 +849,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 52/z_index = 0
 53/name = "cantos_cerca.png 53"
-53/texture = ExtResource( 20 )
+53/texture = ExtResource( 23 )
 53/tex_offset = Vector2( 0, 0 )
 53/modulate = Color( 1, 1, 1, 1 )
 53/region = Rect2( 18, 5, 16, 56 )
@@ -862,7 +875,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 55/shapes = [  ]
 55/z_index = 0
 56/name = "sprite_0.png 56"
-56/texture = ExtResource( 21 )
+56/texture = ExtResource( 24 )
 56/tex_offset = Vector2( 0, 0 )
 56/modulate = Color( 1, 1, 1, 1 )
 56/region = Rect2( 0, 0, 32, 80 )
@@ -1328,7 +1341,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 95/z_index = 0
 96/name = "agua_suja.png 96"
-96/texture = ExtResource( 22 )
+96/texture = ExtResource( 25 )
 96/tex_offset = Vector2( 0, 0 )
 96/modulate = Color( 1, 1, 1, 1 )
 96/region = Rect2( 0, 0, 16, 16 )
@@ -1344,7 +1357,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 96/z_index = 0
 97/name = "agua_suja2.png 97"
-97/texture = ExtResource( 23 )
+97/texture = ExtResource( 26 )
 97/tex_offset = Vector2( 0, 0 )
 97/modulate = Color( 1, 1, 1, 1 )
 97/region = Rect2( 0, 0, 16, 16 )
@@ -1360,7 +1373,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 97/z_index = 0
 98/name = "agua_suja_juncao.png 98"
-98/texture = ExtResource( 24 )
+98/texture = ExtResource( 27 )
 98/tex_offset = Vector2( 0, 0 )
 98/modulate = Color( 1, 1, 1, 1 )
 98/region = Rect2( 0, 0, 16, 16 )
@@ -1376,7 +1389,7 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 } ]
 98/z_index = 0
 99/name = "arvore_escura.png 99"
-99/texture = ExtResource( 25 )
+99/texture = ExtResource( 28 )
 99/tex_offset = Vector2( 0, 0 )
 99/modulate = Color( 1, 1, 1, 1 )
 99/region = Rect2( 0, 0, 160, 192 )
@@ -1991,3 +2004,33 @@ points = PoolVector2Array( 76.0688, 10.7637, 88.46, 20.8106, 94.4882, 16.7918, 1
 164/navigation_offset = Vector2( 0, 0 )
 164/shapes = [  ]
 164/z_index = 0
+165/name = "waterfall_0.png 165"
+165/texture = SubResource( 73 )
+165/tex_offset = Vector2( 0, 0 )
+165/modulate = Color( 1, 1, 1, 1 )
+165/region = Rect2( 0, 0, 32, 80 )
+165/tile_mode = 0
+165/occluder_offset = Vector2( 0, 0 )
+165/navigation_offset = Vector2( 0, 0 )
+165/shapes = [  ]
+165/z_index = 0
+166/name = "waterfall_1.png 166"
+166/texture = ExtResource( 17 )
+166/tex_offset = Vector2( 0, 0 )
+166/modulate = Color( 1, 1, 1, 1 )
+166/region = Rect2( 0, 0, 32, 80 )
+166/tile_mode = 0
+166/occluder_offset = Vector2( 0, 0 )
+166/navigation_offset = Vector2( 0, 0 )
+166/shapes = [  ]
+166/z_index = 0
+167/name = "waterfall_2.png 167"
+167/texture = ExtResource( 18 )
+167/tex_offset = Vector2( 0, 0 )
+167/modulate = Color( 1, 1, 1, 1 )
+167/region = Rect2( 0, 0, 32, 80 )
+167/tile_mode = 0
+167/occluder_offset = Vector2( 0, 0 )
+167/navigation_offset = Vector2( 0, 0 )
+167/shapes = [  ]
+167/z_index = 0

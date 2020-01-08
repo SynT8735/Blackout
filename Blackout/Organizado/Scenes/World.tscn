@@ -237,6 +237,7 @@ speed = 125
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+zoom = Vector2( 0.3, 0.3 )
 
 [node name="Slime" parent="." instance=ExtResource( 16 )]
 editor/display_folded = true
