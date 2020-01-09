@@ -34,6 +34,8 @@ var can_shoot = true
 var velocity := Vector2()
 var is_taking_damage = false
 
+var is_playing = true
+
 signal player_died
 
 func _ready():
@@ -48,61 +50,63 @@ func on_timeout_complete():
 	can_shoot = true
 
 func get_input():
-	# Basically just turning input values into single boolean variables
-	var move_right = (Input.is_action_pressed("ui_right") or touch_right) and not charging_bow
-	var move_left =( Input.is_action_pressed("ui_left") or touch_left) and not charging_bow
-	var move_up = (Input.is_action_pressed("ui_up") or touch_up) and not charging_bow
-	var move_down = (Input.is_action_pressed("ui_down") or touch_down) and not charging_bow
+	if is_playing:
+		# Basically just turning input values into single boolean variables
+		var move_right = (Input.is_action_pressed("ui_right") or touch_right) and not charging_bow
+		var move_left =( Input.is_action_pressed("ui_left") or touch_left) and not charging_bow
+		var move_up = (Input.is_action_pressed("ui_up") or touch_up) and not charging_bow
+		var move_down = (Input.is_action_pressed("ui_down") or touch_down) and not charging_bow
 	
-	# Initializing variables
-	var x_movement = 0
-	var y_movement = 0
+		# Initializing variables
+		var x_movement = 0
+		var y_movement = 0
 	
-	# If moving horizontally
-	if move_right or move_left:
-		# Flips sprite if moving left only
-		sprite.flip_h = move_left
-		sprite.play("Run")
-		# We only want to set x movement here because otherwise it allows the player 
-		# to move diagonally which has strange behavior
-		x_movement = int(move_right) - int(move_left)
-	# If moving vertically
-	elif move_up or move_down:
-		# See note above x_movement
-		y_movement = int(move_down) - int(move_up)
-		if move_up:
-			sprite.play("Walk_Up")
-		elif move_down:
-			sprite.play("Walk_Down")
-	else:
-		if Input.is_action_just_released("ui_up") and not charging_bow:
-			sprite.play("Idle_Back")
-		elif Input.is_action_just_released("ui_down") and not charging_bow:
-			sprite.play("Idle_Front")
-		elif (Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right")) and not charging_bow:
-			sprite.play("Idle")
-	var move_to = Vector2(x_movement * speed, y_movement * speed)
-	velocity = lerp(velocity, move_to, 0.2)
+		# If moving horizontally
+		if move_right or move_left:
+			# Flips sprite if moving left only
+			sprite.flip_h = move_left
+			sprite.play("Run")
+			# We only want to set x movement here because otherwise it allows the player 
+			# to move diagonally which has strange behavior
+			x_movement = int(move_right) - int(move_left)
+		# If moving vertically
+		elif move_up or move_down:
+			# See note above x_movement
+			y_movement = int(move_down) - int(move_up)
+			if move_up:
+				sprite.play("Walk_Up")
+			elif move_down:
+				sprite.play("Walk_Down")
+		else:
+			if Input.is_action_just_released("ui_up") and not charging_bow:
+				sprite.play("Idle_Back")
+			elif Input.is_action_just_released("ui_down") and not charging_bow:
+				sprite.play("Idle_Front")
+			elif (Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right")) and not charging_bow:
+				sprite.play("Idle")
+		var move_to = Vector2(x_movement * speed, y_movement * speed)
+		velocity = lerp(velocity, move_to, 0.2)
 
 func get_attack_input():
-	if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot || attack and not charging_bow and can_shoot:
-		charging_bow = true
-		velocity = Vector2.ZERO
-		sprite.play("Attack_Bow")
-		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		tween.start()
-	elif Input.is_action_just_released("ui_accept") and can_shoot || attack and can_shoot:
-		charging_bow = false
-		tween.stop(self, "bow_power")
-		sprite.play("Idle")
-		var arrow_instance = arrow.instance()
-		var direction = -1 if sprite.flip_h else 1
-		arrow_instance.init(direction, bow_power)
-		get_parent().add_child(arrow_instance)
-		arrow_instance.global_position = global_position
-		arrow_instance.global_position.x += 16 * direction
-		bow_power = 0
-		print("Shoot")
+	if is_playing:
+		if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot || attack and not charging_bow and can_shoot:
+			charging_bow = true
+			velocity = Vector2.ZERO
+			sprite.play("Attack_Bow")
+			tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			tween.start()
+		elif Input.is_action_just_released("ui_accept") and can_shoot || attack and can_shoot:
+			charging_bow = false
+			tween.stop(self, "bow_power")
+			sprite.play("Idle")
+			var arrow_instance = arrow.instance()
+			var direction = -1 if sprite.flip_h else 1
+			arrow_instance.init(direction, bow_power)
+			get_parent().add_child(arrow_instance)
+			arrow_instance.global_position = global_position
+			arrow_instance.global_position.x += 16 * direction
+			bow_power = 0
+			print("Shoot")
 		
 		#Optimize Arrow
 		if get_tree().get_nodes_in_group("arrows").size() >= 10:
@@ -247,3 +251,9 @@ func _on_attack_pressed():
 
 func _on_attack_released():
 	attack = false
+	
+func _on_RichTextLabel_is_playing():
+	is_playing = false
+
+func _on_RichTextLabel_dialog_finished():
+	is_playing = true

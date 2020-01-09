@@ -4,12 +4,16 @@ var dialog = ["Onde é que eu estou?", "Como é que eu vim aqui parar?", "Quem..
 var page = 0
 var s = Vector2()
 
-onready var voice = get_tree().get_root().get_node("Polygon2D/AnimatedSprite")
+onready var voice = get_tree().get_root().get_node("World/Dialogues/First_Dialogue/AnimatedSprite")
+
+signal is_playing
+signal dialog_finished
 
 func _ready():
 	set_bbcode(dialog[page])
 	set_visible_characters(0)
 	set_process_input(true)
+	emit_signal("is_playing")
 	
 func _input(event):
 	if Input.is_action_pressed("ui_accept"):
@@ -28,6 +32,11 @@ func _input(event):
 				s.x = 5
 				s.y = 5
 				voice.scale = s
+			if get_visible_characters() >= get_total_character_count() && page == 4:
+				get_tree().get_root().get_node("World/Dialogues/First_Dialogue").hide()
+				emit_signal("dialog_finished")
+			if get_visible_characters() > get_total_character_count() && page < 4:
+				emit_signal("is_playing")
 
 func _on_Timer_timeout():
 	set_visible_characters(get_visible_characters()+1)
