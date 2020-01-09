@@ -91,7 +91,6 @@ func get_attack_input():
 		sprite.play("Attack_Bow")
 		tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
-		yield(AnimatedSprite, "finished")
 	elif Input.is_action_just_released("ui_accept") and can_shoot || attack and can_shoot:
 		charging_bow = false
 		tween.stop(self, "bow_power")
@@ -106,7 +105,7 @@ func get_attack_input():
 		print("Shoot")
 		
 		#Optimize Arrow
-		if get_tree().get_nodes_in_group("arrows").size() >= 3:
+		if get_tree().get_nodes_in_group("arrows").size() >= 10:
 			for arrow in get_tree().get_nodes_in_group("arrows"):
 				arrow.queue_free()
 				print("deleted arrows")
