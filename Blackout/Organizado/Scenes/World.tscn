@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://assets/scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=2]
@@ -17,12 +17,15 @@
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/font/VT323-Regular.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://assets/scripts/first_dialogue.gd" type="Script" id=17]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_0.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_1.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_2.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_0.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/Sons/Arrow_Sound_.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/Sons/Slime_Jump.ogg" type="AudioStream" id=25]
+[ext_resource path="res://assets/Sons/MegaSlime_Jump.ogg" type="AudioStream" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -42,15 +45,15 @@ font_data = ExtResource( 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "zell",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "shadow_spirit",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "zell",
+"speed": 8.0
 } ]
 
 [node name="World" type="Node"]
@@ -64,6 +67,7 @@ __meta__ = {
 position = Vector2( 1, -2 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="HP" type="Control" parent="HUD"]
 editor/display_folded = true
@@ -197,7 +201,6 @@ normal = ExtResource( 9 )
 action = "ui_accept"
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
 [node name="Pause" type="Control" parent="PauseMenu"]
@@ -210,6 +213,10 @@ script = ExtResource( 10 )
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.440063
+margin_top = 0.440125
+margin_right = 0.440063
+margin_bottom = 0.440125
 color = Color( 0, 0, 0, 0.470588 )
 
 [node name="Label" type="Label" parent="PauseMenu/Pause"]
@@ -311,6 +318,18 @@ position = Vector2( 622.099, 335.877 )
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
 
 [node name="Tween" type="Tween" parent="Slime"]
+
+[node name="PlayerBowSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -20.0
+
+[node name="SlimeJumpingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -20.0
+
+[node name="MegaSlimeJumpingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -20.0
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
 [connection signal="pressed" from="PauseMenu/pause" to="PauseMenu/Pause" method="_on_Button_pressed"]

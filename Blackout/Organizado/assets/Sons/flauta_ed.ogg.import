@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flauta_ed.ogg-1d8a6d6cb6d509365be59529501ec8c6.oggstr"
+
+[deps]
+
+source_file="res://assets/Sons/flauta_ed.ogg"
+dest_files=[ "res://.import/flauta_ed.ogg-1d8a6d6cb6d509365be59529501ec8c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -16,6 +16,7 @@ onready var area = $Area2D
 onready var sprite = $AnimatedSprite
 onready var animation_player = $AnimationPlayer
 onready var tween = $Tween
+onready var PlayerBowSound = get_tree().get_root().get_node("World/PlayerBowSound")
 
 var touch_left := false
 var touch_right := false
@@ -121,6 +122,7 @@ func get_attack_input():
 				sprite.play("Attack_Bow_Up")
 			tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
+			PlayerBowSound.play()
 		elif Input.is_action_just_released("ui_accept") and charging_bow and can_shoot:
 			charging_bow = false
 			tween.stop(self, "bow_power")
@@ -293,7 +295,7 @@ func die():
 		health = 10
 		energy = 5
 		hide()
-
+		
 func _on_RichTextLabel_is_playing():
 	is_playing = false
 

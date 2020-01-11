@@ -26,6 +26,7 @@ config/icon="res://assets/sprites/logo.png"
 [autoload]
 
 global="*res://assets/scripts/global.gd"
+MusicController="*res://Scenes/MusicController.tscn"
 
 [display]
 

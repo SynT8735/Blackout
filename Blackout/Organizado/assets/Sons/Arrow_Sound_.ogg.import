@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Arrow_Sound_.ogg-fb64990b94fc810a889f4bcee4cba351.oggstr"
+
+[deps]
+
+source_file="res://assets/Sons/Arrow_Sound_.ogg"
+dest_files=[ "res://.import/Arrow_Sound_.ogg-fb64990b94fc810a889f4bcee4cba351.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

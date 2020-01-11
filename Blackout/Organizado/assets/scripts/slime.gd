@@ -4,6 +4,7 @@ export (int) var speed
 export (int) var health = 3
 
 onready var sprite = $AnimatedSprite
+onready var SlimeJumpingSound = get_tree().get_root().get_node("World/SlimeJumpingSound")
 
 var velocity = Vector2.ZERO
 var player = null
@@ -17,12 +18,14 @@ func _physics_process(delta):
 	anim()
 	
 func _on_Area2D_body_entered(body):
-    if body.name == "Player":
-        player = body
+	if body.name == "Player":
+		player = body
+		SlimeJumpingSound.play()
 
 func _on_Area2D_body_exited(body):
-    if body.name == "Player":
-        player = null
+	if body.name == "Player":
+		player = null
+		SlimeJumpingSound.stop()
 
 func take_damage():
 	health -= 1

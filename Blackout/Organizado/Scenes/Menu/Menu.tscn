@@ -108,22 +108,22 @@ custom_styles/focus = SubResource( 4 )
 icon = ExtResource( 6 )
 flat = true
 
-[node name="SFX" type="CheckBox" parent="."]
-margin_left = 20.7972
-margin_top = 558.708
-margin_right = 108.797
-margin_bottom = 630.708
+[node name="Audio" type="CheckBox" parent="."]
+margin_left = 21.0
+margin_top = 559.0
+margin_right = 93.0
+margin_bottom = 631.0
 custom_icons/checked = ExtResource( 7 )
 custom_icons/unchecked = ExtResource( 8 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/focus = SubResource( 6 )
 flat = true
 
-[node name="Audio" type="CheckBox" parent="."]
-margin_left = 19.1501
-margin_top = 632.895
-margin_right = 107.15
-margin_bottom = 704.895
+[node name="SFX" type="CheckBox" parent="."]
+margin_left = 20.0
+margin_top = 633.0
+margin_right = 92.0
+margin_bottom = 705.0
 custom_icons/checked = ExtResource( 9 )
 custom_icons/unchecked = ExtResource( 10 )
 custom_styles/pressed = SubResource( 7 )
@@ -131,3 +131,4 @@ custom_styles/focus = SubResource( 8 )
 flat = true
 [connection signal="pressed" from="New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="toggled" from="Audio" to="." method="_on_Audio_toggled"]
