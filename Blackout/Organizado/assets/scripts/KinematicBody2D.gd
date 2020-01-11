@@ -152,6 +152,8 @@ func get_attack_input():
 		#idk what is this shit is about, its even wasn't in if statement ¯\_(ツ)_/¯
 		#and bow stuck bug were caused by this, YEAH I FIXED THIS
 		
+		#YEAH YOU'RE A GOOD I KNOW
+		
 		#Disable Shoot
 		#can_shoot = false
 		
