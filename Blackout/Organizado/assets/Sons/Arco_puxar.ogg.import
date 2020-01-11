@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Arco_puxar.ogg-dd341f8b730ca3cae029ecb956324acd.oggstr"
+
+[deps]
+
+source_file="res://assets/Sons/Arco_puxar.ogg"
+dest_files=[ "res://.import/Arco_puxar.ogg-dd341f8b730ca3cae029ecb956324acd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

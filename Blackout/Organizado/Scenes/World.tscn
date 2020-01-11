@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=2]
@@ -23,9 +23,10 @@
 [ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=23]
-[ext_resource path="res://assets/Sons/Arrow_Sound_.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/Sons/flecha.ogg" type="AudioStream" id=24]
 [ext_resource path="res://assets/Sons/Slime_Jump.ogg" type="AudioStream" id=25]
 [ext_resource path="res://assets/Sons/MegaSlime_Jump.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/Sons/Arco_puxar.ogg" type="AudioStream" id=27]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -319,7 +320,7 @@ position = Vector2( 622.099, 335.877 )
 
 [node name="Tween" type="Tween" parent="Slime"]
 
-[node name="PlayerBowSound" type="AudioStreamPlayer" parent="."]
+[node name="ArrowShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 volume_db = -20.0
 
@@ -329,6 +330,10 @@ volume_db = -20.0
 
 [node name="MegaSlimeJumpingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )
+volume_db = -20.0
+
+[node name="BowReloadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
 volume_db = -20.0
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]

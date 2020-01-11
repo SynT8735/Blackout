@@ -16,7 +16,8 @@ onready var area = $Area2D
 onready var sprite = $AnimatedSprite
 onready var animation_player = $AnimationPlayer
 onready var tween = $Tween
-onready var PlayerBowSound = get_tree().get_root().get_node("World/PlayerBowSound")
+onready var ArrowShootSound = get_tree().get_root().get_node("World/ArrowShootSound")
+onready var BowReloadSound = get_tree().get_root().get_node("World/BowReloadSound")
 
 var touch_left := false
 var touch_right := false
@@ -122,7 +123,7 @@ func get_attack_input():
 				sprite.play("Attack_Bow_Up")
 			tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
-			PlayerBowSound.play()
+			BowReloadSound.play()
 		elif Input.is_action_just_released("ui_accept") and charging_bow and can_shoot:
 			charging_bow = false
 			tween.stop(self, "bow_power")
@@ -133,6 +134,7 @@ func get_attack_input():
 			elif diry == -1:
 				sprite.play("Idle_Back")
 			var arrow_instance = arrow.instance()
+			ArrowShootSound.play()
 			
 			#var direction = -1 if sprite.flip_h else 1
 			arrow_instance.init(directionx, directiony, bow_power, rot, offset)
