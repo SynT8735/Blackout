@@ -35,6 +35,14 @@ var is_taking_damage = false
 
 var is_playing = false
 
+var directionx
+var directiony
+var dirx
+var diry
+var move_to
+var rot = 0
+var offset = true
+
 signal player_died
 
 func _ready():
@@ -83,8 +91,21 @@ func get_input():
 				sprite.play("Idle_Front")
 			elif (Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right")) and not charging_bow:
 				sprite.play("Idle")
-		var move_to = Vector2(x_movement * speed, y_movement * speed)
+		move_to = Vector2(x_movement * speed, y_movement * speed)
 		velocity = lerp(velocity, move_to, 0.2)
+
+		if move_right:
+			dirx = -1
+			diry = 0
+		if move_left:
+			dirx = 1
+			diry = 0
+		if move_down:
+			dirx = 0
+			diry = 1
+		if move_up:
+			dirx = 0
+			diry = -1
 
 func get_attack_input():
 	#i fixed this get attack input code, so now it's working fine, i hope ._.
@@ -92,19 +113,31 @@ func get_attack_input():
 		if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot:
 			charging_bow = true
 			velocity = Vector2.ZERO
-			sprite.play("Attack_Bow")
+			if dirx == 1 or dirx == -1:
+				sprite.play("Attack_Bow")
+			elif diry == 1:
+				sprite.play("Attack_Bow_Down")
+			elif diry == -1:
+				sprite.play("Attack_Bow_Up")
 			tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
 		elif Input.is_action_just_released("ui_accept") and charging_bow and can_shoot:
 			charging_bow = false
 			tween.stop(self, "bow_power")
-			sprite.play("Idle")
+			if dirx == 1 or dirx == -1:
+				sprite.play("Idle")
+			elif diry == 1:
+				sprite.play("Idle_Front")
+			elif diry == -1:
+				sprite.play("Idle_Back")
 			var arrow_instance = arrow.instance()
-			var direction = -1 if sprite.flip_h else 1
-			arrow_instance.init(direction, bow_power)
+			
+			#var direction = -1 if sprite.flip_h else 1
+			arrow_instance.init(directionx, directiony, bow_power, rot, offset)
 			get_parent().add_child(arrow_instance)
 			arrow_instance.global_position = global_position
-			arrow_instance.global_position.x += 16 * direction
+			arrow_instance.global_position.x += 16 * directionx
+			arrow_instance.global_position.y += 16 * directiony
 			bow_power = 0
 			print("Shoot")
 			can_shoot = false
@@ -145,13 +178,35 @@ func _physics_process(delta):
 	update_energy()
 	die()
 	velocity = move_and_slide(velocity)
+	
+	if sprite.flip_h == true:
+		directionx = -1
+		directiony = 0
+		rot = 0
+		offset = true
+	elif sprite.flip_h == false:
+		directionx = 1
+		directiony = 0
+		rot = 0
+		offset = true
+	if diry == -1:
+		directionx = 0
+		directiony = -1
+		rot = -90
+		offset = false
+	elif diry == 1:
+		directionx = 0
+		directiony = 1
+		rot = 90
+		offset = false
 	#debug
-#	if Input.is_action_pressed("ui_debug"):
+	
+#	if Input.is_action_just_released("ui_debug"):
 #		if is_playing == true:
 #			is_playing = false
 #		elif is_playing == false:
 #			is_playing = true
-#	print(str(is_playing) + " " + str(charging_bow))
+#	print()
 
 # This function is needed because if the player is still under an enemy after
 # taking damage then it will not trigger again because it only triggers when
