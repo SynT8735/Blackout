@@ -24,7 +24,7 @@
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=23]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=1]
 size = 72
 font_data = ExtResource( 11 )
 
@@ -36,11 +36,11 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 48
 font_data = ExtResource( 16 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 18 ) ],
 "loop": true,
@@ -167,24 +167,28 @@ position = Vector2( 48, 460 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 5 )
 passby_press = true
+action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 268, 460 )
-scale = Vector2( 1.8, 1.8 )
+position = Vector2( 267, 460 )
+scale = Vector2( 1.8125, 1.8 )
 normal = ExtResource( 6 )
 passby_press = true
+action = "ui_right"
 
 [node name="down" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 160, 570 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 7 )
 passby_press = true
+action = "ui_down"
 
 [node name="up" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 160, 350 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 8 )
 passby_press = true
+action = "ui_up"
 
 [node name="attack" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 961.594, 394.231 )
@@ -215,7 +219,7 @@ margin_left = -155.5
 margin_top = 53.0
 margin_right = 155.5
 margin_bottom = 142.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -276,7 +280,7 @@ margin_left = 96.0
 margin_top = 528.0
 margin_right = 1184.0
 margin_bottom = 640.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 script = ExtResource( 17 )
@@ -288,7 +292,7 @@ autostart = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Dialogues/First_Dialogue"]
 position = Vector2( 1152, 560 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 1 )
+frames = SubResource( 7 )
 animation = "zell"
 
 [node name="Player" parent="." instance=ExtResource( 22 )]
@@ -307,17 +311,6 @@ position = Vector2( 622.099, 335.877 )
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
 
 [node name="Tween" type="Tween" parent="Slime"]
-[connection signal="pressed" from="HUD/Gamepad/left" to="Player" method="_on_left_pressed"]
-[connection signal="released" from="HUD/Gamepad/left" to="Player" method="_on_left_released"]
-[connection signal="pressed" from="HUD/Gamepad/right" to="Player" method="_on_right_pressed"]
-[connection signal="released" from="HUD/Gamepad/right" to="Player" method="_on_right_released"]
-[connection signal="pressed" from="HUD/Gamepad/down" to="Player" method="_on_down_pressed"]
-[connection signal="released" from="HUD/Gamepad/down" to="Player" method="_on_down_released"]
-[connection signal="pressed" from="HUD/Gamepad/up" to="Player" method="_on_up_pressed"]
-[connection signal="released" from="HUD/Gamepad/up" to="Player" method="_on_up_released"]
-[connection signal="pressed" from="HUD/Gamepad/attack" to="Player" method="_on_attack_pressed"]
-[connection signal="pressed" from="HUD/Gamepad/attack" to="Dialogues/First_Dialogue/RichTextLabel" method="_on_attack_pressed"]
-[connection signal="released" from="HUD/Gamepad/attack" to="Player" method="_on_attack_released"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
 [connection signal="pressed" from="PauseMenu/pause" to="PauseMenu/Pause" method="_on_Button_pressed"]

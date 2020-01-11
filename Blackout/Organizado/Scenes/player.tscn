@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/anim/player_anim.tres" type="SpriteFrames" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.0693, 5.03551 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "taking_damage"
@@ -29,13 +32,16 @@ speed = 175
 frames = ExtResource( 2 )
 animation = "Attack_Bow"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 4.84273, -6.0688, 5.00032, 3.00113, 4.01923, 3.03192, 4.06704, 4.02591, 3.02397, 4.00761, 3.04227, 5.05069, 3.00629, 6.04336, 3.09716, 12.9927, 1.99918, 13.0293, -2.02672, 13.011, -4.09458, 12.9744, -3.97944, 10.038, -3.99774, 8.02509, -3.97944, 5.97554, -3.96556, 5.04849, -5.13231, 5.00566, -5.05911, 3.04761, -5.11969, -5.9878 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
 polygon = PoolVector2Array( 4.84273, -6.0688, 5.00032, 3.00113, 4.01923, 3.03192, 4.06704, 4.02591, 3.02397, 4.00761, 3.04227, 5.05069, 3.00629, 6.04336, 3.09716, 12.9927, 1.99918, 13.0293, -2.02672, 13.011, -4.09458, 12.9744, -3.97944, 10.038, -3.99774, 8.02509, -3.97944, 5.97554, -3.96556, 5.04849, -5.13231, 5.00566, -5.05911, 3.04761, -5.11969, -5.9878 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

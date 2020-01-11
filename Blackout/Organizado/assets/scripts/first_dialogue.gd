@@ -14,7 +14,7 @@ func _ready():
 	set_visible_characters(0)
 	set_process_input(true)
 	emit_signal("is_playing")
-	
+
 func _input(event):
 	if Input.is_action_pressed("ui_accept"):
 		if get_visible_characters() > get_total_character_count():
@@ -22,7 +22,7 @@ func _input(event):
 				page += 1
 				set_bbcode(dialog[page])
 				set_visible_characters(0)
-			if page == 3:
+			elif page == 3:
 				voice.play("shadow_spirit")
 				s.x = 2
 				s.y = 2
@@ -32,10 +32,11 @@ func _input(event):
 				s.x = 5
 				s.y = 5
 				voice.scale = s
-			if get_visible_characters() >= get_total_character_count() && page == 4:
+				page += 1
+			elif get_visible_characters() >= get_total_character_count() && page == 5:
 				get_tree().get_root().get_node("World/Dialogues/First_Dialogue").hide()
 				emit_signal("dialog_finished")
-			if get_visible_characters() > get_total_character_count() && page < 4:
+			elif get_visible_characters() > get_total_character_count() && page < 4:
 				emit_signal("is_playing")
 
 func _on_Timer_timeout():

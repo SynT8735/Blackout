@@ -5,8 +5,8 @@ var mute_music = preload("res://assets/HUD/Icons_W/sprite_1.png")
 var sfx = preload("res://assets/HUD/Icons_W/sprite_2.png")
 var mute_sfx = preload("res://assets/HUD/Icons_W/sprite_3.png")
 
-onready var music_button = get_node("TitleScreen/Audio")
-onready var sfx_button = get_node("TitleScreen/SFX")
+#onready var music_button = get_node("TitleScreen/Audio")
+#onready var sfx_button = get_node("TitleScreen/SFX")
 
 # New Game
 func _on_newgameTouch_released():

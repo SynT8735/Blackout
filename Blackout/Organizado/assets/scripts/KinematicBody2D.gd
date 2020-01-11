@@ -21,7 +21,6 @@ var touch_left := false
 var touch_right := false
 var touch_up := false
 var touch_down := false
-var attack := false
 
 var charging_bow = false
 var bow_power = 0
@@ -34,7 +33,7 @@ var can_shoot = true
 var velocity := Vector2()
 var is_taking_damage = false
 
-var is_playing = true
+var is_playing = false
 
 signal player_died
 
@@ -52,10 +51,10 @@ func on_timeout_complete():
 func get_input():
 	if is_playing:
 		# Basically just turning input values into single boolean variables
-		var move_right = (Input.is_action_pressed("ui_right") or touch_right) and not charging_bow
-		var move_left =( Input.is_action_pressed("ui_left") or touch_left) and not charging_bow
-		var move_up = (Input.is_action_pressed("ui_up") or touch_up) and not charging_bow
-		var move_down = (Input.is_action_pressed("ui_down") or touch_down) and not charging_bow
+		var move_right = (Input.is_action_pressed("ui_right")) and not charging_bow
+		var move_left =( Input.is_action_pressed("ui_left")) and not charging_bow
+		var move_up = (Input.is_action_pressed("ui_up"))  and not charging_bow
+		var move_down = (Input.is_action_pressed("ui_down")) and not charging_bow
 	
 		# Initializing variables
 		var x_movement = 0
@@ -88,14 +87,15 @@ func get_input():
 		velocity = lerp(velocity, move_to, 0.2)
 
 func get_attack_input():
+	#i fixed this get attack input code, so now it's working fine, i hope ._.
 	if is_playing:
-		if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot || attack and not charging_bow and can_shoot:
+		if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot:
 			charging_bow = true
 			velocity = Vector2.ZERO
 			sprite.play("Attack_Bow")
 			tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
-		elif Input.is_action_just_released("ui_accept") and can_shoot || attack and can_shoot:
+		elif Input.is_action_just_released("ui_accept") and charging_bow and can_shoot:
 			charging_bow = false
 			tween.stop(self, "bow_power")
 			sprite.play("Idle")
@@ -107,18 +107,23 @@ func get_attack_input():
 			arrow_instance.global_position.x += 16 * direction
 			bow_power = 0
 			print("Shoot")
+			can_shoot = false
+			timer.start()
 		
 		#Optimize Arrow
 		if get_tree().get_nodes_in_group("arrows").size() >= 10:
 			for arrow in get_tree().get_nodes_in_group("arrows"):
 				arrow.queue_free()
 				print("deleted arrows")
-	
+		
+		#idk what is this shit is about, its even wasn't in if statement ¯\_(ツ)_/¯
+		#and bow stuck bug were caused by this, YEAH I FIXED THIS
+		
 		#Disable Shoot
-		can_shoot = false
+		#can_shoot = false
 		
 		#Start Timer
-		timer.start()
+		#timer.start()
 		
 func _on_left_pressed():
 	touch_left = true
@@ -132,27 +137,6 @@ func _on_down_pressed():
 func _on_up_pressed():
 	touch_up = true
 
-func _on_left_released():
-	if not charging_bow:
-		touch_left = false
-		sprite.play("Idle")
-
-func _on_right_released():
-	if not charging_bow:
-		touch_right = false
-		sprite.play("Idle")
-
-func _on_down_released():
-	if not charging_bow:
-		touch_down = false
-		sprite.play("Idle_Front")
-
-func _on_up_released():
-	if not charging_bow:
-		touch_up = false
-		sprite.play("Idle_Back")
-
-# warning-ignore:unused_argument
 func _physics_process(delta):
 	get_input()
 	get_attack_input()
@@ -161,6 +145,13 @@ func _physics_process(delta):
 	update_energy()
 	die()
 	velocity = move_and_slide(velocity)
+	#debug
+#	if Input.is_action_pressed("ui_debug"):
+#		if is_playing == true:
+#			is_playing = false
+#		elif is_playing == false:
+#			is_playing = true
+#	print(str(is_playing) + " " + str(charging_bow))
 
 # This function is needed because if the player is still under an enemy after
 # taking damage then it will not trigger again because it only triggers when
@@ -200,7 +191,7 @@ func update_health():
 		heart5.set_texture(half_heart)
 	if health == 8:
 		heart5.set_texture(empty_heart)
-	if health == 7: 
+	if health == 7:
 		heart4.set_texture(half_heart)
 	if health == 6:
 		heart4.set_texture(empty_heart)
@@ -231,7 +222,7 @@ func update_energy():
 		energy5.set_texture(empty_bolt)
 	if energy == 3:
 		energy4.set_texture(empty_bolt)
-	if energy == 2: 
+	if energy == 2:
 		energy3.set_texture(empty_bolt)
 	if energy == 1:
 		energy2.set_texture(empty_bolt)
@@ -246,12 +237,6 @@ func die():
 		energy = 5
 		hide()
 
-func _on_attack_pressed():
-	attack = true
-
-func _on_attack_released():
-	attack = false
-	
 func _on_RichTextLabel_is_playing():
 	is_playing = false
 

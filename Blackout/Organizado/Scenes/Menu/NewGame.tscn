@@ -3,7 +3,6 @@
 [ext_resource path="res://assets/scripts/return_to_title.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 48
 font_data = ExtResource( 2 )
@@ -22,14 +21,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 632.0
-margin_top = 353.0
-margin_right = 648.0
-margin_bottom = 367.0
+margin_left = 426.0
+margin_top = 309.0
+margin_right = 854.0
+margin_bottom = 410.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 16.0
-margin_bottom = 2.0
+margin_right = 428.0
+margin_bottom = 60.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 0
@@ -37,9 +36,9 @@ custom_constants/shadow_offset_y = 5
 text = "New Game Scene"
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 6.0
-margin_right = 16.0
-margin_bottom = 14.0
+margin_top = 64.0
+margin_right = 428.0
+margin_bottom = 101.0
 custom_fonts/font = SubResource( 2 )
 text = "Back"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
