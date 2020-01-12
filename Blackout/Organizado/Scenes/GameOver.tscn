@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/scripts/GameOver.gd" type="Script" id=1]
-[ext_resource path="res://assets/font/VT323-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/font/Determination2.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/Menu/Buttons/playAgain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-size = 94
+[sub_resource type="DynamicFont" id=2]
+size = 54
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [node name="GameOver" type="Control"]
 pause_mode = 2
@@ -29,7 +29,7 @@ margin_left = -226.5
 margin_top = 34.9109
 margin_right = 226.5
 margin_bottom = 129.911
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
@@ -52,6 +52,6 @@ margin_left = 569.178
 margin_top = 430.089
 margin_right = 738.178
 margin_bottom = 499.089
-custom_styles/focus = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
 [connection signal="pressed" from="playAgain" to="." method="_on_playAgain_pressed"]
 [connection signal="pressed" from="voltarMenu" to="." method="_on_voltarMenu_pressed"]
