@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/Menu/Buttons/playAgain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=2]
-size = 54
+[sub_resource type="DynamicFont" id=4]
+size = 72
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
@@ -29,7 +29,7 @@ margin_left = -226.5
 margin_top = 34.9109
 margin_right = 226.5
 margin_bottom = 129.911
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
