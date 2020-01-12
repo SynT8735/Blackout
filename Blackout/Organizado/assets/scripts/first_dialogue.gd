@@ -22,7 +22,7 @@ func _input(event):
 				page += 1
 				set_bbcode(dialog[page])
 				set_visible_characters(0)
-			elif page == 3:
+			if page == 3:
 				voice.play("shadow_spirit")
 				s.x = 2
 				s.y = 2
