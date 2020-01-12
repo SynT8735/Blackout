@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var dialog = ["Onde é que eu estou?", "Como é que eu vim aqui parar?", "Quem...sou eu?", "Tu sabes porque estás aqui...Zell", "Ei! Espera aí! Como sabes o meu nome?"]
+var dialog = [tr("DIALOG001"), tr("DIALOG002"), tr("DIALOG003"), tr("DIALOG004"), tr("DIALOG005")]
 var page = 0
 var s = Vector2()
 

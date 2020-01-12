@@ -108,6 +108,11 @@ pointing/emulate_touch_from_mouse=true
 2d_render/layer_2="player"
 2d_physics/layer_2="walls"
 
+[locale]
+
+translations=PoolStringArray( "res://translations.pt.translation", "res://translations.en.translation", "res://translations.ru.translation" )
+locale_filter=[ 0, [  ] ]
+
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0

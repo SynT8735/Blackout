@@ -23,6 +23,6 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
-text = "Jogar Novamente
-"
+text = "PLAY_AGAIN"
+align = 1
 uppercase = true

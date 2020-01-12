@@ -19,3 +19,15 @@ func _on_Audio_toggled(button_pressed):
 		MusicController.stop()
 	else:
 		MusicController.play("res://assets/Sons/flauta_ed.ogg")
+
+func _on_change_lang_pressed():
+	# little bit messy, it's simple switch between locales
+	if TranslationServer.get_locale() == "pt":
+		TranslationServer.set_locale("en")
+		print("en locale")
+	elif TranslationServer.get_locale() == "en":
+		TranslationServer.set_locale("ru")
+		print("ru locale")
+	elif TranslationServer.get_locale() == "ru":
+		TranslationServer.set_locale("pt")
+		print("pt locale")
