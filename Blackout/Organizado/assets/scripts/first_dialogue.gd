@@ -24,10 +24,12 @@ func _input(event):
 				set_visible_characters(0)
 			if page == 3:
 				voice.play("shadow_spirit")
+				global.world.spirittoggle()
 				s.x = 2
 				s.y = 2
 				voice.scale = s
 			elif page == 4:
+				global.world.spirittoggle()
 				voice.play("zell")
 				s.x = 5
 				s.y = 5
