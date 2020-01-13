@@ -25,7 +25,6 @@ func _ready():
 func _physics_process(delta):
 	global_position.x += directionx * speed
 	global_position.y += directiony * speed
-	print(position.y)
 	
 
 func _on_VisibilityNotifier2D_screen_exited():
@@ -34,6 +33,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Arrow_body_entered(body):
 	match body.name:
-		"Slime":
+		"Slime", "Slime2", "Slime3", "Slime4", "Slime5", "Slime_Boss":
 			body.take_damage()
 			queue_free()
