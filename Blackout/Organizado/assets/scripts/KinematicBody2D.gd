@@ -110,7 +110,6 @@ func get_input():
 			diry = -1
 
 func get_attack_input():
-	#i fixed this get attack input code, so now it's working fine, i hope ._.
 	if is_playing:
 		if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot:
 			charging_bow = true
@@ -136,7 +135,6 @@ func get_attack_input():
 			var arrow_instance = arrow.instance()
 			ArrowShootSound.play()
 			
-			#var direction = -1 if sprite.flip_h else 1
 			arrow_instance.init(directionx, directiony, bow_power, rot, offset)
 			get_parent().add_child(arrow_instance)
 			arrow_instance.global_position = global_position
@@ -152,17 +150,6 @@ func get_attack_input():
 			for arrow in get_tree().get_nodes_in_group("arrows"):
 				arrow.queue_free()
 				print("deleted arrows")
-		
-		#idk what is this shit is about, its even wasn't in if statement ¯\_(ツ)_/¯
-		#and bow stuck bug were caused by this, YEAH I FIXED THIS
-		
-		#YEAH YOU'RE A GOOD I KNOW
-		
-		#Disable Shoot
-		#can_shoot = false
-		
-		#Start Timer
-		#timer.start()
 		
 func _on_left_pressed():
 	touch_left = true
@@ -223,7 +210,7 @@ func check_for_overlap():
 
 func _on_Area2D_body_entered(body):
 	match body.name:
-		"Slime", "Slime2", "Slime3":
+		"Slime", "Slime2", "Slime3", "Slime4", "Slime5", "Slime_Boss":
 			take_damage(body)
 			
 func take_damage(from_body):

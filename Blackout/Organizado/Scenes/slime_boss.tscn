@@ -1,6 +1,6 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=45 format=2]
 
-[ext_resource path="res://assets/scripts/slime.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/slime_boss.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_back/slime_back_00.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_back/slime_back_01.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_back/slime_back_02.png" type="Texture" id=4]
@@ -31,34 +31,16 @@
 [ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_right/slime_right_12.png" type="Texture" id=29]
 [ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_right/slime_right_13.png" type="Texture" id=30]
 [ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_right/slime_right_14.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_00.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_01.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_02.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_03.png" type="Texture" id=35]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_04.png" type="Texture" id=36]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_05.png" type="Texture" id=37]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_06.png" type="Texture" id=38]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_07.png" type="Texture" id=39]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_08.png" type="Texture" id=40]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_09.png" type="Texture" id=41]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_10.png" type="Texture" id=42]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_11.png" type="Texture" id=43]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_12.png" type="Texture" id=44]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_13.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_left/slime_left_14.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_00.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_01.png" type="Texture" id=48]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_02.png" type="Texture" id=49]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_04.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_05.png" type="Texture" id=51]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_06.png" type="Texture" id=52]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_07.png" type="Texture" id=53]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_08.png" type="Texture" id=54]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_09.png" type="Texture" id=55]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_10.png" type="Texture" id=56]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_11.png" type="Texture" id=57]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_12.png" type="Texture" id=58]
-[ext_resource path="res://assets/sprites/PNG/sprites/Slime/idle/Slime_front/sprite_front_14.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_00.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_01.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_02.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_03.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_04.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_05.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_06.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_07.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_08.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/PNG/sprites/Slime_boss/idle/Boss_Slime_left/Boss_Slime_left_09.png" type="Texture" id=41]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -72,12 +54,12 @@ animations = [ {
 "name": "right",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
 "loop": true,
 "name": "left",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+"frames": [  ],
 "loop": true,
 "name": "down",
 "speed": 24.0
@@ -103,25 +85,20 @@ tracks/0/keys = {
 "values": [ false, true, false, true, false, true, false, true, false, true ]
 }
 
-[node name="Slime" type="KinematicBody2D"]
+[node name="Slime_Boss" type="KinematicBody2D"]
+position = Vector2( 0, -1.36224 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 3
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-speed = 75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "left"
-frame = 3
-playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -7.09208, -1.98779, 7.98555, -2.03637, 8.00689, 0.951752, 11.9982, 0.951753, 11.9982, 3.00075, 14.965, 2.97941, 14.9863, 3.93988, 17.014, 3.98256, 17.014, 6.94934, 20.0021, 7.03472, 20.0234, 9.98015, 20.9839, 10.0015, 21.0266, 24.0457, 20.0021, 24.0457, 20.0234, 27.0765, 16.9499, 27.0125, 17.0566, 28.037, -16.0262, 28.0156, -16.0688, 26.9911, -19.0356, 27.0338, -19.0356, 24.0243, -21.0419, 24.0243, -20.9659, 8.05456, -19.003, 8.03091, -18.9793, 7.01398, -16.0042, 6.97415, -15.9793, 4.06152, -15.0333, 3.98684, -14.9836, 3.01596, -11.9963, 3.01596, -11.9963, 1.02442, -7.01739, 0.974628 )
+polygon = PoolVector2Array( -2.36941, 9.39087, -7.98993, 13.8136, -15.4533, 23.3961, -19.1388, 31.7808, 23.3376, 31.6887, 19.7441, 23.6725, 13.0179, 16.7621, 6.38387, 10.4044 )
 
 [node name="player_container" type="Node" parent="."]
 

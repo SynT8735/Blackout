@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Scene.tscn" type="PackedScene" id=2]
@@ -23,10 +23,11 @@
 [ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=23]
-[ext_resource path="res://assets/Sons/flecha.ogg" type="AudioStream" id=24]
-[ext_resource path="res://assets/Sons/Slime_Jump.ogg" type="AudioStream" id=25]
-[ext_resource path="res://assets/Sons/MegaSlime_Jump.ogg" type="AudioStream" id=26]
-[ext_resource path="res://assets/Sons/Arco_puxar.ogg" type="AudioStream" id=27]
+[ext_resource path="res://Scenes/slime_boss.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/Sons/flecha.ogg" type="AudioStream" id=25]
+[ext_resource path="res://assets/Sons/Slime_Jump.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/Sons/MegaSlime_Jump.ogg" type="AudioStream" id=27]
+[ext_resource path="res://assets/Sons/Arco_puxar.ogg" type="AudioStream" id=28]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -68,6 +69,7 @@ __meta__ = {
 position = Vector2( 1, -2 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="HP" type="Control" parent="HUD"]
 editor/display_folded = true
@@ -165,6 +167,7 @@ rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 
 [node name="Gamepad" type="Node2D" parent="HUD"]
+editor/display_folded = true
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
 position = Vector2( 48, 460 )
@@ -201,6 +204,7 @@ normal = ExtResource( 9 )
 action = "ui_accept"
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 100
 
 [node name="Pause" type="Control" parent="PauseMenu"]
@@ -266,12 +270,14 @@ icon = ExtResource( 14 )
 flat = true
 
 [node name="GameOverMenu" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 100
 
 [node name="GameOver" parent="GameOverMenu" instance=ExtResource( 15 )]
 visible = false
 
 [node name="Dialogues" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="First_Dialogue" type="Polygon2D" parent="Dialogues"]
 position = Vector2( 195.326, -325.406 )
@@ -304,8 +310,9 @@ frames = SubResource( 7 )
 animation = "zell"
 
 [node name="Player" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
 position = Vector2( 172.972, 245.875 )
-speed = 125
+speed = 100
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
@@ -314,27 +321,66 @@ zoom = Vector2( 0.3, 0.3 )
 
 [node name="Slime" parent="." instance=ExtResource( 23 )]
 editor/display_folded = true
-position = Vector2( 622.099, 335.877 )
+position = Vector2( 592.649, 327.327 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
 
 [node name="Tween" type="Tween" parent="Slime"]
 
+[node name="Slime2" parent="." instance=ExtResource( 23 )]
+editor/display_folded = true
+position = Vector2( 553.699, 390.977 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime2"]
+
+[node name="Tween" type="Tween" parent="Slime2"]
+
+[node name="Slime3" parent="." instance=ExtResource( 23 )]
+editor/display_folded = true
+position = Vector2( 1062.9, 481.228 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime3"]
+
+[node name="Tween" type="Tween" parent="Slime3"]
+
+[node name="Slime4" parent="." instance=ExtResource( 23 )]
+editor/display_folded = true
+position = Vector2( 1160.75, 454.628 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime4"]
+
+[node name="Tween" type="Tween" parent="Slime4"]
+
+[node name="Slime5" parent="." instance=ExtResource( 23 )]
+editor/display_folded = true
+position = Vector2( 1575.9, 119.276 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime5"]
+
+[node name="Tween" type="Tween" parent="Slime5"]
+
+[node name="Slime_Boss" parent="." instance=ExtResource( 24 )]
+position = Vector2( 2184.86, -239.365 )
+
+[node name="Navigation2D" type="Navigation2D" parent="Slime_Boss"]
+
+[node name="Tween" type="Tween" parent="Slime_Boss"]
+
 [node name="ArrowShootSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 24 )
-volume_db = -20.0
+stream = ExtResource( 25 )
+volume_db = -9.0
 
 [node name="SlimeJumpingSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 25 )
-volume_db = -20.0
+stream = ExtResource( 26 )
+volume_db = -9.0
 
 [node name="MegaSlimeJumpingSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 26 )
-volume_db = -20.0
+stream = ExtResource( 27 )
+volume_db = -9.0
 
 [node name="BowReloadSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 27 )
-volume_db = -20.0
+stream = ExtResource( 28 )
+volume_db = -9.0
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
 [connection signal="pressed" from="PauseMenu/pause" to="PauseMenu/Pause" method="_on_Button_pressed"]

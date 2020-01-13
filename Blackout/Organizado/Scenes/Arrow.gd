@@ -34,6 +34,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Arrow_body_entered(body):
 	match body.name:
-		"Slime":
+		"Slime", "Slime2", "Slime3", "Slime4", "Slime5", "Slime_Boss":
 			body.take_damage()
 			queue_free()
