@@ -29,6 +29,7 @@ func _on_Area2D_body_exited(body):
 
 func take_damage():
 	health -= 1
+	
 	print("Slime Boss Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
 	

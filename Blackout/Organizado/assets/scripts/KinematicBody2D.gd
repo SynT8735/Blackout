@@ -141,7 +141,6 @@ func get_attack_input():
 			arrow_instance.global_position.x += 16 * directionx
 			arrow_instance.global_position.y += 16 * directiony
 			bow_power = 0
-			print("Shoot")
 			can_shoot = false
 			timer.start()
 		
@@ -149,7 +148,6 @@ func get_attack_input():
 		if get_tree().get_nodes_in_group("arrows").size() >= 10:
 			for arrow in get_tree().get_nodes_in_group("arrows"):
 				arrow.queue_free()
-				print("deleted arrows")
 		
 func _on_left_pressed():
 	touch_left = true
@@ -192,14 +190,6 @@ func _physics_process(delta):
 		directiony = 1
 		rot = 90
 		offset = false
-	#debug
-	
-#	if Input.is_action_just_released("ui_debug"):
-#		if is_playing == true:
-#			is_playing = false
-#		elif is_playing == false:
-#			is_playing = true
-#	print()
 
 # This function is needed because if the player is still under an enemy after
 # taking damage then it will not trigger again because it only triggers when

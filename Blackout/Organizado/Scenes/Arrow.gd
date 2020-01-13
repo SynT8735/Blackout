@@ -25,7 +25,6 @@ func _ready():
 func _physics_process(delta):
 	global_position.x += directionx * speed
 	global_position.y += directiony * speed
-	print(position.y)
 	
 
 func _on_VisibilityNotifier2D_screen_exited():
