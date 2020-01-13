@@ -19,8 +19,9 @@ stretch/aspect=false
 
 [application]
 
-config/name="Organizado"
+config/name="Blackout"
 run/main_scene="res://Scenes/Menu/Menu.tscn"
+boot_splash/image="res://assets/sprites/menu.png"
 config/icon="res://assets/sprites/logo.png"
 
 [autoload]
