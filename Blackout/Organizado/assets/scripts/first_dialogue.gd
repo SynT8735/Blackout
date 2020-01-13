@@ -30,6 +30,7 @@ func _input(event):
 				voice.scale = s
 			elif page == 4:
 				global.world.spirittoggle()
+				global.world.cutscene_end()
 				voice.play("zell")
 				s.x = 5
 				s.y = 5
