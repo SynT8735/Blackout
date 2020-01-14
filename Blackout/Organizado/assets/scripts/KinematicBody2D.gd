@@ -18,8 +18,10 @@ onready var animation_player = $AnimationPlayer
 onready var tween = $Tween
 onready var ArrowShootSound = get_tree().get_root().get_node("World/ArrowShootSound")
 onready var BowReloadSound = get_tree().get_root().get_node("World/BowReloadSound")
+onready var pickupPotion = get_tree().get_root().get_node("World/pickupPotion")
 onready var rock_block = get_tree().get_root().get_node("World/block/Sprite")
 onready var particles_boss = get_tree().get_root().get_node("World/particles_boss")
+onready var potion = get_tree().get_root().get_node("World/potion")
 
 var touch_left := false
 var touch_right := false
@@ -216,6 +218,13 @@ func take_damage(from_body):
 		animation_player.play("taking_damage")
 		yield(animation_player, "animation_finished")
 		is_taking_damage = false
+		
+func _on_potion_body_entered(body):
+	pickupPotion.play()
+	health += 2
+	print("Player Healed")
+	print(health)
+	potion.queue_free()
 			
 #Update Health
 onready var heart1 = get_tree().get_root().get_node("World/HUD/HP/Health1")
@@ -227,26 +236,52 @@ onready var heart5 = get_tree().get_root().get_node("World/HUD/HP/Health5")
 func update_health():
 	if health == 10:
 		heart5.set_texture(full_heart)
+		heart4.set_texture(full_heart)
+		heart3.set_texture(full_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 9:
 		heart5.set_texture(half_heart)
+		heart4.set_texture(full_heart)
+		heart3.set_texture(full_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 8:
 		heart5.set_texture(empty_heart)
+		heart4.set_texture(full_heart)
+		heart3.set_texture(full_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 7:
 		heart4.set_texture(half_heart)
+		heart3.set_texture(full_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 6:
 		heart4.set_texture(empty_heart)
+		heart3.set_texture(full_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 5:
 		heart3.set_texture(half_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 4:
 		heart3.set_texture(empty_heart)
+		heart2.set_texture(full_heart)
+		heart1.set_texture(full_heart)
 	if health == 3:
 		heart2.set_texture(half_heart)
+		heart1.set_texture(full_heart)
 	if health == 2:
 		heart2.set_texture(empty_heart)
+		heart1.set_texture(full_heart)
 	if health == 1:
 		heart1.set_texture(half_heart)
 	if health <= 0:
 		heart1.set_texture(empty_heart)
+	if health > 10:
+		health = 10
 		
 #Update Energy
 onready var energy1 = get_tree().get_root().get_node("World/HUD/Energy/Energy1")
@@ -287,4 +322,4 @@ func _on_trigger_body_entered(body):
 	if "Player" in body.name:
 		rock_block.show()
 		particles_boss.show()
-		print("Parede ativada")
+		print("Parede ativada")	
