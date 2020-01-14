@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ss_cutscene.tscn" type="PackedScene" id=2]
@@ -10,29 +10,31 @@
 [ext_resource path="res://assets/HUD/transparentDark25.png" type="Texture" id=8]
 [ext_resource path="res://assets/HUD/transparentDark24.png" type="Texture" id=9]
 [ext_resource path="res://assets/HUD/transparentDark46.png" type="Texture" id=10]
-[ext_resource path="res://assets/scripts/Pause.gd" type="Script" id=11]
-[ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=12]
-[ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/HUD/transparentDark12.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/font/Determination2.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://assets/scripts/first_dialogue.gd" type="Script" id=18]
-[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_0.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_1.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_2.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/slime_boss.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/Sons/flecha.ogg" type="AudioStream" id=26]
-[ext_resource path="res://assets/Sons/Slime_Jump.ogg" type="AudioStream" id=27]
-[ext_resource path="res://assets/Sons/MegaSlime_Jump.ogg" type="AudioStream" id=28]
-[ext_resource path="res://assets/Sons/Arco_puxar.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/HUD/transparentDark47.png" type="Texture" id=11]
+[ext_resource path="res://assets/HUD/transparentDark45.png" type="Texture" id=12]
+[ext_resource path="res://assets/scripts/Pause.gd" type="Script" id=13]
+[ext_resource path="res://assets/font/Montserrat-ExtraBold.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://Scenes/Menu/Buttons/voltaraoJogo.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Menu/Buttons/voltaraoMenu.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/HUD/transparentDark12.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/font/Determination2.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://assets/scripts/first_dialogue.gd" type="Script" id=20]
+[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_0.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_1.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/PNG/sprites/ShadowSpirit/Ilde/ShadowSpirit/ShadowSpirit_2.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/PNG/sprites/Zell/Idle/idle_down.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/slime.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/slime_boss.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/Sons/flecha.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/Sons/Slime_Jump.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/Sons/MegaSlime_Jump.ogg" type="AudioStream" id=30]
+[ext_resource path="res://assets/Sons/Arco_puxar.ogg" type="AudioStream" id=31]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
-font_data = ExtResource( 12 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -44,25 +46,25 @@ font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 48
-font_data = ExtResource( 17 )
+font_data = ExtResource( 19 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "zell",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "shadow_spirit",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "zell",
+"speed": 8.0
 } ]
 
 [node name="World" type="Node"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 695.776, 652.42, 36.3232, 629.077 ],
+"_edit_horizontal_guides_": [ 695.776, 652.42, 36.3232, 629.077, 558.001 ],
 "_edit_vertical_guides_": [ 66.3985 ]
 }
 
@@ -70,12 +72,13 @@ __meta__ = {
 visible = false
 position = Vector2( 221.603, 246.272 )
 scale = Vector2( 0.5, 0.5 )
-frame = 0
+frame = 3
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, -2 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="HP" type="Control" parent="HUD"]
 editor/display_folded = true
@@ -173,44 +176,54 @@ rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 5 )
 
 [node name="Gamepad" type="Node2D" parent="HUD"]
-editor/display_folded = true
 
 [node name="left" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 48, 460 )
+position = Vector2( 35.6169, 428.99 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 6 )
 passby_press = true
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 267, 460 )
+position = Vector2( 252.617, 428.99 )
 scale = Vector2( 1.8125, 1.8 )
 normal = ExtResource( 7 )
 passby_press = true
 action = "ui_right"
 
 [node name="down" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 160, 570 )
+position = Vector2( 147.617, 538.99 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 8 )
 passby_press = true
 action = "ui_down"
 
 [node name="up" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 160, 350 )
+position = Vector2( 145.617, 318.99 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 9 )
 passby_press = true
 action = "ui_up"
 
 [node name="attack" type="TouchScreenButton" parent="HUD/Gamepad"]
-position = Vector2( 961.594, 394.231 )
+position = Vector2( 967.294, 401.581 )
 scale = Vector2( 3.65, 3.65 )
 normal = ExtResource( 10 )
 action = "ui_accept"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HUD/Gamepad"]
+modulate = Color( 0.235294, 0.235294, 0.235294, 0.784314 )
+position = Vector2( 1051, 249.289 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 11 )
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="HUD/Gamepad"]
+modulate = Color( 0.235294, 0.235294, 0.235294, 0.784314 )
+position = Vector2( 800.403, 503.699 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 12 )
+
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
 [node name="Pause" type="Control" parent="PauseMenu"]
@@ -218,7 +231,7 @@ pause_mode = 2
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 11 )
+script = ExtResource( 13 )
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/Pause"]
 anchor_right = 1.0
@@ -244,22 +257,22 @@ text = "PAUSED"
 align = 1
 uppercase = true
 
-[node name="voltarJogo" parent="PauseMenu/Pause" instance=ExtResource( 13 )]
+[node name="voltarJogo" parent="PauseMenu/Pause" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -230.0
-margin_top = -30.0
-margin_right = 230.0
-margin_bottom = 30.0
+margin_left = -168.15
+margin_top = -27.15
+margin_right = 291.85
+margin_bottom = 32.85
 custom_styles/focus = SubResource( 2 )
 
-[node name="voltarMenu" parent="PauseMenu/Pause" instance=ExtResource( 14 )]
-margin_left = 561.181
-margin_top = 449.279
-margin_right = 721.181
-margin_bottom = 509.279
+[node name="voltarMenu" parent="PauseMenu/Pause" instance=ExtResource( 16 )]
+margin_left = 585.9
+margin_top = 449.0
+margin_right = 745.9
+margin_bottom = 509.0
 custom_styles/focus = SubResource( 3 )
 
 [node name="pause" type="Button" parent="PauseMenu"]
@@ -272,14 +285,13 @@ rect_scale = Vector2( 1.15, 1.15 )
 size_flags_stretch_ratio = 0.0
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
-icon = ExtResource( 15 )
+icon = ExtResource( 17 )
 flat = true
 
 [node name="GameOverMenu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
-[node name="GameOver" parent="GameOverMenu" instance=ExtResource( 16 )]
+[node name="GameOver" parent="GameOverMenu" instance=ExtResource( 18 )]
 visible = false
 
 [node name="Dialogues" type="CanvasLayer" parent="."]
@@ -303,7 +315,7 @@ margin_bottom = 640.0
 custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-script = ExtResource( 18 )
+script = ExtResource( 20 )
 
 [node name="Timer" type="Timer" parent="Dialogues/First_Dialogue"]
 wait_time = 0.05
@@ -315,7 +327,7 @@ scale = Vector2( 5, 5 )
 frames = SubResource( 7 )
 animation = "zell"
 
-[node name="Player" parent="." instance=ExtResource( 23 )]
+[node name="Player" parent="." instance=ExtResource( 25 )]
 editor/display_folded = true
 position = Vector2( 172.972, 245.875 )
 speed = 100
@@ -325,47 +337,52 @@ visible = false
 current = true
 zoom = Vector2( 0.3, 0.3 )
 
-[node name="Slime" parent="." instance=ExtResource( 24 )]
+[node name="Slime" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
 position = Vector2( 592.649, 327.327 )
+speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
 
 [node name="Tween" type="Tween" parent="Slime"]
 
-[node name="Slime2" parent="." instance=ExtResource( 24 )]
+[node name="Slime2" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
-position = Vector2( 553.699, 390.977 )
+position = Vector2( 555.286, 389.39 )
+speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime2"]
 
 [node name="Tween" type="Tween" parent="Slime2"]
 
-[node name="Slime3" parent="." instance=ExtResource( 24 )]
+[node name="Slime3" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
 position = Vector2( 1062.9, 481.228 )
+speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime3"]
 
 [node name="Tween" type="Tween" parent="Slime3"]
 
-[node name="Slime4" parent="." instance=ExtResource( 24 )]
+[node name="Slime4" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
-position = Vector2( 1160.75, 454.628 )
+position = Vector2( 1161.47, 454.398 )
+speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime4"]
 
 [node name="Tween" type="Tween" parent="Slime4"]
 
-[node name="Slime5" parent="." instance=ExtResource( 24 )]
+[node name="Slime5" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
 position = Vector2( 1575.9, 119.276 )
+speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime5"]
 
 [node name="Tween" type="Tween" parent="Slime5"]
 
-[node name="Slime_Boss" parent="." instance=ExtResource( 25 )]
+[node name="Slime_Boss" parent="." instance=ExtResource( 27 )]
 position = Vector2( 2184.86, -239.365 )
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime_Boss"]
@@ -373,19 +390,19 @@ position = Vector2( 2184.86, -239.365 )
 [node name="Tween" type="Tween" parent="Slime_Boss"]
 
 [node name="ArrowShootSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 26 )
-volume_db = -9.0
-
-[node name="SlimeJumpingSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 27 )
-volume_db = -9.0
-
-[node name="MegaSlimeJumpingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 28 )
 volume_db = -9.0
 
-[node name="BowReloadSound" type="AudioStreamPlayer" parent="."]
+[node name="SlimeJumpingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 29 )
+volume_db = -9.0
+
+[node name="MegaSlimeJumpingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = -9.0
+
+[node name="BowReloadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
 volume_db = -9.0
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]

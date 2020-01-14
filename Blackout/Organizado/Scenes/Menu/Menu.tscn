@@ -142,4 +142,5 @@ underline = 2
 [connection signal="pressed" from="New Game" to="." method="_on_New_Game_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 [connection signal="toggled" from="Audio" to="." method="_on_Audio_toggled"]
+[connection signal="toggled" from="SFX" to="." method="_on_SFX_toggled"]
 [connection signal="pressed" from="change_lang" to="." method="_on_change_lang_pressed"]
