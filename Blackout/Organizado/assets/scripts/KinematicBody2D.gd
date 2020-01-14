@@ -19,6 +19,7 @@ onready var tween = $Tween
 onready var ArrowShootSound = get_tree().get_root().get_node("World/ArrowShootSound")
 onready var BowReloadSound = get_tree().get_root().get_node("World/BowReloadSound")
 onready var rock_block = get_tree().get_root().get_node("World/block/Sprite")
+onready var particles_boss = get_tree().get_root().get_node("World/particles_boss")
 
 var touch_left := false
 var touch_right := false
@@ -285,4 +286,5 @@ func _on_RichTextLabel_dialog_finished():
 func _on_trigger_body_entered(body):
 	if "Player" in body.name:
 		rock_block.show()
+		particles_boss.show()
 		print("Parede ativada")
