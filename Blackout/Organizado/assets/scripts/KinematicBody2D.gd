@@ -221,7 +221,7 @@ func take_damage(from_body):
 		
 func _on_potion_body_entered(body):
 	pickupPotion.play()
-	health += 2
+	health = 10
 	print("Player Healed")
 	print(health)
 	potion.queue_free()
