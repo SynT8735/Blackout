@@ -5,6 +5,8 @@ export (int) var health = 15
 
 onready var sprite = $AnimatedSprite
 onready var MegaSlimeJumpingSound = get_tree().get_root().get_node("World/MegaSlimeJumpingSound")
+onready var cutscene = get_tree().get_root().get_node("World/FinalCutscene/VideoPlayer")
+onready var pause = get_tree().get_root().get_node("World/PauseMenu/pause")
 
 var velocity = Vector2.ZERO
 var player = null
@@ -37,6 +39,9 @@ func die():
 	if health <= 0:
 		print("Slime Died")
 		queue_free()
+		cutscene.show()
+		pause.hide()
+		cutscene.play()
 		
 func anim():
 	sprite.play("left")

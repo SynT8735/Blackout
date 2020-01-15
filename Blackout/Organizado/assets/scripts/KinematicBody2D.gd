@@ -58,7 +58,7 @@ func _ready():
 	timer.set_wait_time(arrow_delay)
 	timer.connect("timeout", self, "on_timeout_complete")
 	add_child(timer)
-	
+
 func on_timeout_complete():
 	can_shoot = true
 
@@ -69,11 +69,11 @@ func get_input():
 		var move_left =( Input.is_action_pressed("ui_left")) and not charging_bow
 		var move_up = (Input.is_action_pressed("ui_up"))  and not charging_bow
 		var move_down = (Input.is_action_pressed("ui_down")) and not charging_bow
-	
+
 		# Initializing variables
 		var x_movement = 0
 		var y_movement = 0
-	
+
 		# If moving horizontally
 		if move_right or move_left:
 			# Flips sprite if moving left only
@@ -138,7 +138,7 @@ func get_attack_input():
 				sprite.play("Idle_Back")
 			var arrow_instance = arrow.instance()
 			ArrowShootSound.play()
-			
+
 			arrow_instance.init(directionx, directiony, bow_power, rot, offset)
 			get_parent().add_child(arrow_instance)
 			arrow_instance.global_position = global_position
@@ -147,12 +147,12 @@ func get_attack_input():
 			bow_power = 0
 			can_shoot = false
 			timer.start()
-		
+
 		#Optimize Arrow
 		if get_tree().get_nodes_in_group("arrows").size() >= 10:
 			for arrow in get_tree().get_nodes_in_group("arrows"):
 				arrow.queue_free()
-		
+
 func _on_left_pressed():
 	touch_left = true
 
@@ -173,7 +173,7 @@ func _physics_process(delta):
 	update_energy()
 	die()
 	velocity = move_and_slide(velocity)
-	
+
 	if sprite.flip_h == true:
 		directionx = -1
 		directiony = 0
@@ -206,7 +206,7 @@ func _on_Area2D_body_entered(body):
 	match body.name:
 		"Slime", "Slime2", "Slime3", "Slime4", "Slime5", "Slime_Boss":
 			take_damage(body)
-			
+
 func take_damage(from_body):
 	if not is_taking_damage:
 		is_taking_damage = true
@@ -218,14 +218,14 @@ func take_damage(from_body):
 		animation_player.play("taking_damage")
 		yield(animation_player, "animation_finished")
 		is_taking_damage = false
-		
+
 func _on_potion_body_entered(body):
 	pickupPotion.play()
 	health = 10
 	print("Player Healed")
 	print(health)
 	potion.queue_free()
-			
+
 #Update Health
 onready var heart1 = get_tree().get_root().get_node("World/HUD/HP/Health1")
 onready var heart2 = get_tree().get_root().get_node("World/HUD/HP/Health2")
@@ -282,7 +282,7 @@ func update_health():
 		heart1.set_texture(empty_heart)
 	if health > 10:
 		health = 10
-		
+
 #Update Energy
 onready var energy1 = get_tree().get_root().get_node("World/HUD/Energy/Energy1")
 onready var energy2 = get_tree().get_root().get_node("World/HUD/Energy/Energy2")
@@ -303,7 +303,7 @@ func update_energy():
 		energy2.set_texture(empty_bolt)
 	if energy == 0:
 		energy1.set_texture(empty_bolt)
-		
+
 func die():
 	if health <= 0:
 		print("Player Died")
@@ -311,7 +311,7 @@ func die():
 		health = 10
 		energy = 5
 		hide()
-		
+
 func _on_RichTextLabel_is_playing():
 	is_playing = false
 

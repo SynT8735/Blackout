@@ -11,3 +11,6 @@ func spirittoggle():
 
 func cutscene_end():
 	$ss_cutscene.queue_free()
+
+func _on_VideoPlayer_finished():
+	get_tree().change_scene('res://Scenes/Menu/Menu.tscn')
