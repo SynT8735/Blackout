@@ -2,11 +2,11 @@ id,pt,en,ru
 PLAY,Jogar,Play,Играть
 RETURN_TO_THE_GAME,Voltar ao jogo,Return to the Game,Вернуться к игре
 MENU,Menu,Menu,Меню
-YOU_DIED,Morres-te,You Died,Вы погибли
+YOU_DIED,Morreste,You Died,Вы погибли
 PLAY_AGAIN,Jogar Novamente,Play Again,Начать сначала
 PAUSED,Pausa,Paused,Пауза
 DIALOG001,Onde é que eu estou?,Where am I?,Где я?
 DIALOG002,Como é que eu vim aqui parar?,How did I get here?,Как я сюда попал?
-DIALOG003,Quem...sou eu?,Who...am I?,Кто я?
+DIALOG003,Quem...sou eu?,Who...am I?,Кто...я?
 DIALOG004,Tu sabes porque estás aqui...Zell,You know why you're here...Zell,"Ты знаешь, почему ты здесь... Зелл"
 DIALOG005,Ei! Espera aí! Como sabes o meu nome?,Hey! Wait! How do you know my name?,Эй! Подожди! Откуда ты знаешь мое имя?

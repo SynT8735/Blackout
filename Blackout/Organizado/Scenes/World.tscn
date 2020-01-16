@@ -151,12 +151,12 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 37.9309, 10.2234 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 10, 10.8799 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=13]
 
-[sub_resource type="CircleShape2D" id=13]
+[sub_resource type="CircleShape2D" id=14]
 radius = 11.0421
 
 [node name="World" type="Node"]
@@ -428,8 +428,7 @@ frames = SubResource( 7 )
 animation = "zell"
 
 [node name="Player" parent="." instance=ExtResource( 25 )]
-editor/display_folded = true
-position = Vector2( 167.06, 365.654 )
+position = Vector2( 153.522, 244.719 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -544,11 +543,11 @@ shape = SubResource( 11 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="trigger"]
 position = Vector2( 48.8206, 31.345 )
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="trigger"]
 position = Vector2( -39.1118, 31.345 )
-shape = SubResource( 14 )
+shape = SubResource( 12 )
 
 [node name="block" type="KinematicBody2D" parent="."]
 position = Vector2( 2176.61, -98.6154 )
@@ -556,7 +555,7 @@ z_index = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="block"]
 position = Vector2( 0.250488, 0.0127367 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 one_way_collision = true
 
 [node name="Sprite" type="Sprite" parent="block"]
@@ -713,7 +712,7 @@ texture = ExtResource( 75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="potion"]
 position = Vector2( 0.115982, -0.463928 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="FinalCutscene" type="CanvasLayer" parent="."]
 editor/display_folded = true

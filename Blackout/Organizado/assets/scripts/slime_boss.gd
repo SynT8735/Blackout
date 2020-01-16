@@ -39,6 +39,7 @@ func die():
 	if health <= 0:
 		print("Slime Died")
 		queue_free()
+		MusicController.stop()
 		cutscene.show()
 		pause.hide()
 		cutscene.play()
