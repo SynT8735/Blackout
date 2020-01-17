@@ -40,6 +40,7 @@ var velocity := Vector2()
 var is_taking_damage = false
 
 var is_playing = false
+var sfx = true
 
 var directionx
 var directiony
@@ -58,6 +59,14 @@ func _ready():
 	timer.set_wait_time(arrow_delay)
 	timer.connect("timeout", self, "on_timeout_complete")
 	add_child(timer)
+	$"/root/Menu".connect("SFX_off", self, "SFX_off_received")
+	$"/root/Menu".connect("SFX_on", self, "SFX_on_received")
+
+func SFX_off_received():
+	sfx = false
+	
+func SFX_on_received():
+	sfx = true
 
 func on_timeout_complete():
 	can_shoot = true
@@ -126,7 +135,8 @@ func get_attack_input():
 				sprite.play("Attack_Bow_Up")
 			tween.interpolate_property(self, "bow_power", 3, 8, 5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
-			BowReloadSound.play()
+			if sfx:
+				SFX_Bow.play("res://assets/Sons/Arco_puxar.ogg")
 		elif Input.is_action_just_released("ui_accept") and charging_bow and can_shoot:
 			charging_bow = false
 			tween.stop(self, "bow_power")
@@ -137,7 +147,8 @@ func get_attack_input():
 			elif diry == -1:
 				sprite.play("Idle_Back")
 			var arrow_instance = arrow.instance()
-			ArrowShootSound.play()
+			if sfx:
+				SFX_Arrow.play("res://assets/Sons/flecha.ogg")
 
 			arrow_instance.init(directionx, directiony, bow_power, rot, offset)
 			get_parent().add_child(arrow_instance)
@@ -220,11 +231,12 @@ func take_damage(from_body):
 		is_taking_damage = false
 
 func _on_potion_body_entered(body):
-	pickupPotion.play()
 	health = 10
 	print("Player Healed")
 	print(health)
 	potion.queue_free()
+	if sfx:
+		SFX_Flask.play("res://assets/Sons/Pickup_Coin7.wav")
 
 #Update Health
 onready var heart1 = get_tree().get_root().get_node("World/HUD/HP/Health1")

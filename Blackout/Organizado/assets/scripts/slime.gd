@@ -8,6 +8,17 @@ onready var SlimeJumpingSound = get_tree().get_root().get_node("World/SlimeJumpi
 
 var velocity = Vector2.ZERO
 var player = null
+var sfx = true
+
+func _ready():
+	$"/root/Menu".connect("SFX_off", self, "SFX_off_received")
+	$"/root/Menu".connect("SFX_on", self, "SFX_on_received")
+	
+func SFX_off_received():
+	sfx = false
+	
+func SFX_on_received():
+	sfx = true
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
@@ -20,12 +31,14 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		player = body
-		SlimeJumpingSound.play()
+		if sfx:
+			SFX_Slime_Jumping.play("Slime_Jump.ogg")
 
 func _on_Area2D_body_exited(body):
 	if body.name == "Player":
 		player = null
-		SlimeJumpingSound.stop()
+		if sfx:
+			SFX_Slime_Jumping.stop()
 
 func take_damage():
 	health -= 1

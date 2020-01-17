@@ -29,6 +29,12 @@ config/icon="res://assets/sprites/logo.png"
 
 global="*res://assets/scripts/global.gd"
 MusicController="*res://Scenes/MusicController.tscn"
+SFX_Arrow="*res://Scenes/SFX/SFX_Arrow.tscn"
+SFX_Bow="*res://Scenes/SFX/SFX_Bow.tscn"
+SFX_Flask="*res://Scenes/SFX/SFX_Flask.tscn"
+SFX_MegaSlime_Jumping="*res://Scenes/SFX/SFX_MegaSlime_Jumping.tscn"
+SFX_Slime_Jumping="*res://Scenes/SFX/SFX_Slime_Jumping.tscn"
+Menu="*res://Scenes/Menu/Menu.tscn"
 
 [display]
 
