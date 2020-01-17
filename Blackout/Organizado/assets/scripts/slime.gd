@@ -32,10 +32,10 @@ func take_damage():
 	print("Slime Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
 	
+func anim():
+	sprite.play("slime")
+	
 func die():
 	if health <= 0:
 		print("Slime Died")
 		queue_free()
-		
-func anim():
-	sprite.play("left")

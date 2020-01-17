@@ -44,3 +44,7 @@ func _input(event):
 
 func _on_Timer_timeout():
 	set_visible_characters(get_visible_characters()+1)
+
+func _on_skip_dialogue_pressed():
+	get_tree().get_root().get_node("World/Dialogues/First_Dialogue").hide()
+	emit_signal("dialog_finished")

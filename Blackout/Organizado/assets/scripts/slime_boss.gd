@@ -35,6 +35,9 @@ func take_damage():
 	print("Slime Boss Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
 	
+func anim():
+	sprite.play("slime_boss")
+	
 func die():
 	if health <= 0:
 		print("Slime Died")
@@ -43,6 +46,3 @@ func die():
 		cutscene.show()
 		pause.hide()
 		cutscene.play()
-		
-func anim():
-	sprite.play("left")
