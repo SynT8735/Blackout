@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://assets/scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ss_cutscene.tscn" type="PackedScene" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://Scenes/particles.tscn" type="PackedScene" id=41]
 [ext_resource path="res://assets/sprites/flask_2.png" type="Texture" id=42]
 [ext_resource path="res://assets/cutscene/Comp 1.ogv" type="VideoStream" id=43]
+[ext_resource path="res://assets/scripts/ss_bridge.gd" type="Script" id=44]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -111,6 +112,20 @@ extents = Vector2( 10, 10.8799 )
 [sub_resource type="CircleShape2D" id=14]
 radius = 11.0421
 
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "ss",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=17]
+radius = 9.06378
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 10, 26.5346 )
+
 [node name="World" type="Node"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -122,7 +137,7 @@ __meta__ = {
 visible = false
 position = Vector2( 221.603, 246.272 )
 scale = Vector2( 0.5, 0.5 )
-frame = 0
+frame = 3
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, -2 )
@@ -391,7 +406,7 @@ zoom = Vector2( 0.3, 0.3 )
 
 [node name="Slime" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
-position = Vector2( 572.066, 226.619 )
+position = Vector2( 581.82, 232.959 )
 speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime"]
@@ -663,6 +678,34 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 43 )
+
+[node name="ss_bridge" type="KinematicBody2D" parent="."]
+position = Vector2( 1045.62, 250.909 )
+z_index = 3
+script = ExtResource( 44 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="ss_bridge"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 15 )
+animation = "ss"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ss_bridge"]
+shape = SubResource( 17 )
+disabled = true
+
+[node name="triggerBridge" type="Area2D" parent="."]
+position = Vector2( 896.954, 244.377 )
+z_index = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerBridge"]
+rotation = 1.5708
+shape = SubResource( 16 )
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
 [connection signal="pressed" from="PauseMenu/pause" to="PauseMenu/Pause" method="_on_Button_pressed"]
@@ -676,3 +719,4 @@ stream = ExtResource( 43 )
 [connection signal="body_entered" from="trigger" to="Player" method="_on_trigger_body_entered"]
 [connection signal="body_entered" from="potion" to="Player" method="_on_potion_body_entered"]
 [connection signal="finished" from="FinalCutscene/VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="body_entered" from="triggerBridge" to="ss_bridge" method="_on_triggerBridge_body_entered"]
