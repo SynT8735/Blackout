@@ -11,10 +11,6 @@ onready var pause = get_tree().get_root().get_node("World/PauseMenu/pause")
 var velocity = Vector2.ZERO
 var player = null
 var sfx = true
-
-func _ready():
-	$"/root/Menu".connect("SFX_off", self, "SFX_off_received")
-	$"/root/Menu".connect("SFX_on", self, "SFX_on_received")
 	
 func SFX_off_received():
 	sfx = false

@@ -52,5 +52,3 @@ func _on_change_lang_pressed():
 	elif TranslationServer.get_locale() == "ru":
 		TranslationServer.set_locale("pt")
 		print("pt locale")
-
-

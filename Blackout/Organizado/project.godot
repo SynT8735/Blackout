@@ -34,7 +34,6 @@ SFX_Bow="*res://Scenes/SFX/SFX_Bow.tscn"
 SFX_Flask="*res://Scenes/SFX/SFX_Flask.tscn"
 SFX_MegaSlime_Jumping="*res://Scenes/SFX/SFX_MegaSlime_Jumping.tscn"
 SFX_Slime_Jumping="*res://Scenes/SFX/SFX_Slime_Jumping.tscn"
-Menu="*res://Scenes/Menu/Menu.tscn"
 
 [display]
 

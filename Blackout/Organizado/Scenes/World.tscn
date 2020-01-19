@@ -137,7 +137,6 @@ __meta__ = {
 visible = false
 position = Vector2( 221.603, 246.272 )
 scale = Vector2( 0.5, 0.5 )
-frame = 3
 
 [node name="Map" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, -2 )
@@ -289,7 +288,6 @@ scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 11 )
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 100
 
 [node name="Pause" type="Control" parent="PauseMenu"]
@@ -344,9 +342,9 @@ custom_styles/focus = SubResource( 3 )
 [node name="pause" type="Button" parent="PauseMenu"]
 pause_mode = 2
 margin_left = 1194.59
-margin_top = 21.7552
+margin_top = 21.1565
 margin_right = 1254.59
-margin_bottom = 75.7552
+margin_bottom = 75.1565
 rect_scale = Vector2( 1.15, 1.15 )
 size_flags_stretch_ratio = 0.0
 custom_styles/pressed = SubResource( 4 )
@@ -415,7 +413,7 @@ speed = 70
 
 [node name="Slime2" parent="." instance=ExtResource( 26 )]
 editor/display_folded = true
-position = Vector2( 568.518, 322.496 )
+position = Vector2( 568.518, 321.897 )
 speed = 70
 
 [node name="Navigation2D" type="Navigation2D" parent="Slime2"]

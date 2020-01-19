@@ -59,8 +59,6 @@ func _ready():
 	timer.set_wait_time(arrow_delay)
 	timer.connect("timeout", self, "on_timeout_complete")
 	add_child(timer)
-	$"/root/Menu".connect("SFX_off", self, "SFX_off_received")
-	$"/root/Menu".connect("SFX_on", self, "SFX_on_received")
 
 func SFX_off_received():
 	sfx = false
@@ -185,6 +183,7 @@ func _physics_process(delta):
 	die()
 	restart_game()
 	velocity = move_and_slide(velocity)
+	
 
 	if sprite.flip_h == true:
 		directionx = -1
