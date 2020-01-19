@@ -183,6 +183,7 @@ func _physics_process(delta):
 	update_health()
 	update_energy()
 	die()
+	restart_game()
 	velocity = move_and_slide(velocity)
 
 	if sprite.flip_h == true:
@@ -334,4 +335,9 @@ func _on_trigger_body_entered(body):
 	if "Player" in body.name:
 		rock_block.show()
 		particles_boss.show()
-		print("Parede ativada")	
+		print("Parede ativada")
+		
+func restart_game():
+	if Input.is_action_just_released("ui_restart"):
+		get_tree().change_scene("res://Scenes/World.tscn")
+		print("Restart")
