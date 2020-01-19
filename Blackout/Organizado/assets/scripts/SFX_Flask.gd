@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	global.SFX_Flask = self
+	
 # Load the music player node
 onready var _player = $AudioStreamPlayer
 

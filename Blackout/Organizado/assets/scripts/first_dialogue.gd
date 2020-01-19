@@ -47,4 +47,5 @@ func _on_Timer_timeout():
 
 func _on_skip_dialogue_pressed():
 	get_tree().get_root().get_node("World/Dialogues/First_Dialogue").hide()
+	page = 5
 	emit_signal("dialog_finished")

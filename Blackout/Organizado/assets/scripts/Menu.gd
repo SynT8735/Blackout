@@ -18,20 +18,28 @@ func _on_Exit_pressed():
 
 func _on_Audio_toggled(button_pressed):
 	if(button_pressed):
-		MusicController.stop()
+		#MusicController.stop()
+		AudioServer.set_bus_mute(1, true)
+		global.MUSIC_mute = true
 	else:
-		MusicController.play("res://assets/Sons/flauta_ed.ogg")
+		#MusicController.play("res://assets/Sons/flauta_ed.ogg")
+		AudioServer.set_bus_mute(1, false)
+		global.MUSIC_mute = false
 		
 func _on_SFX_toggled(button_pressed):
 	if(button_pressed):
-		SFX_Arrow.stop()
-		SFX_Bow.stop()
-		SFX_Flask.stop()
-		SFX_MegaSlime_Jumping.stop()
-		SFX_Slime_Jumping.stop()
-		emit_signal("SFX_off")
+#		SFX_Arrow.stop()
+#		SFX_Bow.stop()
+#		SFX_Flask.stop()
+#		SFX_MegaSlime_Jumping.stop()
+#		SFX_Slime_Jumping.stop()
+#		emit_signal("SFX_off")
+		AudioServer.set_bus_mute(2, true)
+		global.SFX_mute = true
 	else:
-		emit_signal("SFX_on")
+		#emit_signal("SFX_on")
+		AudioServer.set_bus_mute(2, false)
+		global.SFX_mute = false
 
 func _on_change_lang_pressed():
 	# little bit messy, it's simple switch between locales

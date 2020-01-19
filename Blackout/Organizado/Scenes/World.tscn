@@ -120,10 +120,10 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CircleShape2D" id=17]
+[sub_resource type="CircleShape2D" id=16]
 radius = 9.06378
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 10, 26.5346 )
 
 [node name="World" type="Node"]
@@ -693,7 +693,7 @@ frames = SubResource( 15 )
 animation = "ss"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ss_bridge"]
-shape = SubResource( 17 )
+shape = SubResource( 16 )
 disabled = true
 
 [node name="triggerBridge" type="Area2D" parent="."]
@@ -705,7 +705,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggerBridge"]
 rotation = 1.5708
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 [connection signal="pressed" from="PauseMenu/Pause/voltarJogo" to="PauseMenu/Pause" method="_on_Button_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/voltarMenu" to="PauseMenu/Pause" method="_on_voltarMenu_pressed"]
 [connection signal="pressed" from="PauseMenu/pause" to="PauseMenu/Pause" method="_on_Button_pressed"]

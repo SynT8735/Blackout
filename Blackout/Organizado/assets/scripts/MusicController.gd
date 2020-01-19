@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	global.MusicController = self
+	
 # Load the music player node
 onready var _player = $AudioStreamPlayer
 
