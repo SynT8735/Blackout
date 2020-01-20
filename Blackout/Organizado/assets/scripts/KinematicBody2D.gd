@@ -122,7 +122,7 @@ func get_input():
 
 func get_attack_input():
 	if is_playing:
-		if Input.is_action_pressed("ui_accept") and not charging_bow and can_shoot:
+		if Input.is_action_pressed("ui_attack") and not charging_bow and can_shoot:
 			charging_bow = true
 			velocity = Vector2.ZERO
 			if dirx == 1 or dirx == -1:
@@ -135,7 +135,7 @@ func get_attack_input():
 			tween.start()
 			if sfx:
 				SFX_Bow.play("res://assets/Sons/Arco_puxar.ogg")
-		elif Input.is_action_just_released("ui_accept") and charging_bow and can_shoot:
+		elif Input.is_action_just_released("ui_attack") and charging_bow and can_shoot:
 			charging_bow = false
 			tween.stop(self, "bow_power")
 			if dirx == 1 or dirx == -1:
