@@ -16,7 +16,7 @@ func _ready():
 	emit_signal("is_playing")
 
 func _input(event):
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_attack"):
 		if get_visible_characters() > get_total_character_count():
 			if page < dialog.size()-1:
 				page += 1
