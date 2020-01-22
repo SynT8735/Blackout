@@ -40,9 +40,11 @@ func _on_Area2D_body_exited(body):
 
 func take_damage():
 	health -= 1
-	
 	print("Slime Boss Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
+	speed = 0
+	yield(get_tree().create_timer(.5), "timeout")
+	speed = 100
 	
 func anim():
 	sprite.play("mega_slime")

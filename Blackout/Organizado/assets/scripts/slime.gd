@@ -40,6 +40,9 @@ func take_damage():
 	health -= 1
 	print("Slime Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
+	speed = 0
+	yield(get_tree().create_timer(.5), "timeout")
+	speed = 100
 	
 func anim():
 	sprite.play("slime")
