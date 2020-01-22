@@ -42,7 +42,7 @@ func take_damage():
 	$AnimationPlayer.play("taking_damage")
 	speed = 0
 	yield(get_tree().create_timer(.5), "timeout")
-	speed = 100
+	speed = 60
 	
 func anim():
 	sprite.play("slime")

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 75
+export (int) var speed
 export (int) var health = 15
 
 onready var sprite = $AnimatedSprite
@@ -43,8 +43,8 @@ func take_damage():
 	print("Slime Boss Health: " + str(health))
 	$AnimationPlayer.play("taking_damage")
 	speed = 0
-	yield(get_tree().create_timer(.5), "timeout")
-	speed = 100
+	yield(get_tree().create_timer(.1), "timeout")
+	speed = 55
 	
 func anim():
 	sprite.play("mega_slime")
