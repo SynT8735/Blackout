@@ -2,7 +2,7 @@ id,pt,en,ru
 PLAY,Jogar,Play,Играть
 RETURN_TO_THE_GAME,Voltar ao jogo,Return to the Game,Вернуться к игре
 MENU,Menu,Menu,Меню
-YOU_DIED,Morreste,You Died,Вы погибли
+YOU_DIED,Perdeste,You Lost,Вы погибли
 PLAY_AGAIN,Jogar Novamente,Play Again,Начать сначала
 PAUSED,Pausa,Paused,Пауза
 DIALOG001,Onde é que eu estou?,Where am I?,Где я?
