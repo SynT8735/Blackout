@@ -55,20 +55,18 @@ texture = ExtResource( 2 )
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0.392157 )
 margin_left = 168.649
-margin_top = 380.839
+margin_top = 279.839
 margin_right = 393.649
-margin_bottom = 605.839
+margin_bottom = 504.839
 texture = ExtResource( 3 )
 expand = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color( 0.776471, 0.545098, 0.545098, 0.392157 )
 margin_left = 916.983
-margin_top = 404.17
+margin_top = 303.17
 margin_right = 1101.98
-margin_bottom = 589.17
+margin_bottom = 488.17
 texture = ExtResource( 4 )
 expand = true
 
@@ -88,9 +86,9 @@ flat = true
 
 [node name="newgame" type="Label" parent="New Game"]
 margin_left = -338.0
-margin_top = 1.0
+margin_top = 41.0
 margin_right = 700.64
-margin_bottom = 60.316
+margin_bottom = 100.316
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.101961, 0.117647, 0.180392, 1 )
