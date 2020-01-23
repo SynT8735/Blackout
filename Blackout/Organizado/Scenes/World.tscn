@@ -379,7 +379,7 @@ frames = SubResource( 7 )
 animation = "zell"
 
 [node name="Player" parent="." instance=ExtResource( 25 )]
-position = Vector2( 157.584, 252.362 )
+position = Vector2( 2173.48, -25.3838 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -504,6 +504,7 @@ scale = Vector2( 1.34536, 1.34536 )
 texture = ExtResource( 40 )
 
 [node name="particles_boss" type="Node2D" parent="."]
+editor/display_folded = true
 visible = false
 z_index = 9
 
